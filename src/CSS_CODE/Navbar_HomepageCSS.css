@@ -1,0 +1,59 @@
+/* Overall Navbar Container */
+.navbar-homepage-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 60px;
+  background-color: #fff7f5;
+  /* box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); */
+  /* position: sticky; */
+  top: 0;
+  z-index: 100;
+}
+
+/* Left Side Links */
+.navbar-homepage-leftside {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+}
+
+.navbar-homepage-leftside a {
+  text-decoration: none;
+  /* color: #ce7382; */
+  color: #9a283b;
+  font-weight: 500;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.navbar-homepage-leftside a:hover {
+  color: #ce7382; /* your flower brand color */
+}
+
+/* Center Logo */
+.navbar-homepage-logo {
+  width: 150px;
+  object-fit: contain;
+  cursor: pointer;
+}
+
+
+/* Right Side Icons */
+.navbar-homepage-rightside {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.icon-tag {
+  font-size: 22px;
+  color: #9a283b;
+  cursor: pointer;
+  transition: transform 0.2s ease, color 0.3s ease;
+}
+
+.icon-tag:hover {
+  color: #ce7382;
+  transform: scale(1.1);
+}
