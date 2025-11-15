@@ -12,6 +12,7 @@ import MeronFlowers from "../Assests/MaronFlower.png"
 import WhineAndWhite from "../Assests/WhineAndWhiteFlowers.png"
 import MultiFlower from "../Assests/_ (1).jpeg"
 import MultiFlowerTwo from "../Assests/_ (3).jpeg"
+import Footer from "./Footer"
 
 
 function Homepage(){
@@ -183,6 +184,9 @@ function Homepage(){
                     </div>
                     
                 </div>
+                
+                <Footer/>
+
 
             </div>
 
