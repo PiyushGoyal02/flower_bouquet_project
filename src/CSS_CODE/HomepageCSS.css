@@ -31,6 +31,13 @@
     transition: background-color 0.3s ease, color 0.3s ease;
 }
 
+.search-more-button-homepage:hover{
+    background-color: #ce7382;
+    color: #fff7f5;
+    border-color: #ce7382;
+    transition: 0.5s;
+}
+
 .Popular-Bouquets-header{
     display: flex;
     align-items: center;
@@ -41,21 +48,338 @@
 .Popular-Bouquets-text{
     font-size: 35px;
     font-weight: 600;
+    transition: 0.5s;
 }
 
-.Popular-Bouquets-Images-with-text{
-    display: flex;
-    gap: 30px;
-    justify-content: center;
-    margin: 20px 100px 60px 100px;
-}
-
-.Bouquet-image{
-    width: 525px;
-    height: 525px;
-    object-fit: cover;
-    object-position: center;
-    border-radius: 8px;
+.Popular-Bouquets-text:hover{
+    color: #ce7382;
+    transition: 0.5s;
     cursor: pointer;
-    transition: transform 0.3s ease;
 }
+
+.Popular-Bouquets-Images-with-text {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 5px;
+    padding: 20px;
+}
+
+.Bouquet-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.Bouquet-image {
+    width: 500px;
+    height: auto;
+    border-radius: 10px;
+}
+
+.Bouquet-text-box {
+    margin-top: 10px;
+}
+
+.Bouquet-text {
+    font-size: 20px;
+    font-weight: 600;
+    color: #9a283b;
+    margin: 5px 0;
+}
+
+.Bouquet-description {
+    font-size: 15px;
+    color: #9a283b;
+    margin: 3px 0;
+}
+
+.Bouquet-price {
+    font-size: 18px;
+    font-weight: bold;
+    color: grey;
+    margin-top: 5px;
+}
+
+
+
+/* Main Container */
+.Flower-About-Section {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 30px 80px;
+  position: relative;
+}
+
+/* Left Side Text */
+.About-Flower-Workshop-LeftSection {
+  max-width: 45%;
+}
+
+.About-Flower-Workshop-LeftSection h2 {
+  font-size: 32px;
+  font-weight: 600;
+  color: #b64e5a;
+  margin-bottom: 20px;
+}
+
+.About-Flower-Workshop-LeftSection p {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+/* Right Side Images Wrapper */
+.Right-Images-Wrapper {
+  position: relative;
+  width: 420px;         /* fixed width for proper centering */
+  height: 480px;        /* enough space for both images */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Big Flower Image */
+.Siddhi-Image {
+  width: 380px;
+  height: auto;
+  border-radius: 12px;
+  object-fit: cover;
+  object-position: center;
+  position: absolute;
+  top: 40px;            /* pushed down to avoid touching text */
+  left: 30%;
+  transform: translateX(-50%);   /* CENTER IMAGE PROPERLY */
+  box-shadow: 0px 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+/* Small Flower Image */
+.Red-Flower-Bouquet-Image {
+  width: 260px;
+  height: auto;
+  border-radius: 12px;
+  position: absolute;
+  bottom: -300px;          /* cleaner overlap */
+  right: -60px;          /* slight offset to look premium */
+  object-fit: cover;
+  object-position: center;
+  box-shadow: 0px 8px 25px rgba(0,0,0,0.1);
+}
+
+
+
+
+
+
+/* For Pictures Div */
+.Four-Pictures-Div{
+    background-color: #f2dddc;
+}
+
+.Four-Pictures-Header{
+    color: #9a283b;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 60px 200px 10px 200px;
+    padding-top: 14%;
+}
+
+.Find-more-button-homepage{
+    background-color: transparent;
+    border-color: #ce7382;
+    border-radius: 4px;
+    color: #9a283b;
+    padding: 8px 25px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.Find-more-button-homepage:hover{
+    background-color: #ce7382;
+    color: #fff7f5;
+    border-color: #ce7382;
+    transition: 0.5s;
+}
+
+
+
+
+
+
+
+
+/* 🔹 Main Grid Container — Exactly 3 Images Per Row */
+.popular-bouquets-container {
+    width: 100%;
+    max-width: 1500px;      /* Center whole section */
+    margin: 0 auto;
+    padding: 20px 10px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);  /* 3 per row */
+    gap: 25px;
+}
+
+
+
+/* 🔹 Each Bouquet Card */
+.bouquet-card-item {
+    background: #ffffff;
+    border-radius: 16px;
+
+    cursor: pointer;
+    width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;   /* Center content */
+    text-align: center;    /* Center text */
+    /* justify-content: space-between; */
+
+    box-shadow: 0px 4px 14px rgba(0, 0, 0, 0.12);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.bouquet-card-item:hover {
+    transform: translateY(-6px);
+    box-shadow: 0px 6px 20px rgba(0, 0, 0, 0.18);
+}
+
+
+/* 🔹 Bouquet Image — Clean & Perfect Crop */
+.bouquet-card-image {
+    width: 400px;
+    height: 550px;          /* Balanced height */
+    object-fit: cover;      /* No stretch, no blur */
+    object-position: center;
+    border-bottom: 1px solid #eee;
+}
+
+
+/* 🔹 Content Section (Title, Desc, Price) */
+.bouquet-card-content {
+    padding: 2px 20px;
+}
+
+
+/* 🔹 Title */
+.bouquet-card-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #222;
+    margin-bottom: 6px;
+}
+
+
+/* 🔹 Description */
+.bouquet-card-description {
+    font-size: 14px;
+    color: #555;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+
+
+/* 🔹 Price */
+.bouquet-card-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: #ce7382;
+}
+
+
+
+.Contact-Section-Homepage{
+    background-color: #f5d1d3;
+    height: auto;
+    width: 100%;
+}
+
+
+
+
+/* CONTACT SECTION MAIN CONTAINER */
+.Contact-Section-Homepage {
+    width: 100%;
+    max-width: 1852px;
+    margin: 50px auto;
+    padding: 30px 20px;
+
+    background: #f5d1d3;              /* Light soft background */
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    gap: 30px;
+    box-shadow: 0px 4px 12px rgba(0,0,0,0.1);
+}
+
+
+/* LEFT TEXT */
+.Contact-Section-Homepage > div:first-child p {
+    font-size: 25px;
+    font-weight: 600;
+    color: #333;
+    line-height: 1.3;
+}
+
+.Contact-Input-Button-Homepage{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    gap: 15px;
+}
+
+
+/* RIGHT SIDE INPUT BOX */
+.Contact-Section-Homepage input {
+    width: 280px;
+    padding: 12px 14px;
+    margin-bottom: 12px;
+
+    border: 1.5px solid #ddd;
+    border-radius: 10px;
+    outline: none;
+
+    font-size: 15px;
+    transition: 0.2s ease-in-out;
+}
+
+/* INPUT FOCUS EFFECT */
+.Contact-Section-Homepage input:focus {
+    border-color: #ce7382;    /* Premium color */
+    box-shadow: 0 0 4px rgba(206, 115, 130, 0.4);
+}
+
+
+/* SUBSCRIBE BUTTON */
+.Contact-Button-Homepage {
+    width: 280px;
+    padding: 12px 14px;
+
+    background: #ce7382;
+    color: white;
+    border: none;
+    border-radius: 10px;
+
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.2s ease;
+}
+
+.Contact-Button-Homepage:hover {
+    background: #b35c6b;
+}
+
+.Contact-Extra-Text {
+    font-size: 15px;
+    color: #555;
+    margin-top: 10px;
+    text-align: center;
+    line-height: 1.5;
+}
+
