@@ -117,6 +117,17 @@
   max-width: 45%;
 }
 
+.About-Flower-Workshop-Text{
+    position: relative;
+}
+
+.Leaves-Decoration-Image{
+    width: 25%;
+    position: absolute;
+    top: 390px;
+    left: -40px;
+}
+
 .About-Flower-Workshop-LeftSection h2 {
   font-size: 32px;
   font-weight: 600;

@@ -6,7 +6,7 @@ import PopularBouquetsHomepageFirst from "../Assests/PopularBouquetsHomepageFirs
 import PopularBouquetsHomepageSecond from "../Assests/PopularBouquetsHomepageSecond.jpeg"
 import PopularBouquetsHomepageThird from "../Assests/PopularBouquetsHomepageThird.jpeg"
 import RedFlowerBouquet from "../Assests/Screenshot from 2025-11-15 16-08-04.png"
-// import LeavesPic from "../Assests/Leaves.jpg"
+import LeavesPic from "../Assests/LeavesImage.png"
 import RedRiddhiSiddhiFlower from "../Assests/RedRiddhiSiddhiBouquet.png"
 import MeronFlowers from "../Assests/MaronFlower.png"
 import WhineAndWhite from "../Assests/WhineAndWhiteFlowers.png"
@@ -115,15 +115,19 @@ function Homepage(){
 
                 {/* Left Side */}
                 <div className="About-Flower-Workshop-LeftSection">
-                    <h2>About Our Flower Workshop</h2>
-                    <p>
-                        Our floristry workshop creates stylish and delicate bouquets for any occasion.<br/>
-                        Every bouquet is made with love from fresh flowers delivered daily.<br/>
-                        We value beauty, quality, and attention to detail —<br/>
-                        so each bouquet becomes a special gift filled with emotion.<br/>
-                    </p>
+                    <div className="About-Flower-Workshop-Text">
+                        <h2>About Our Flower Workshop</h2>
+                        <p>
+                            Our floristry workshop creates stylish and delicate bouquets for any occasion.<br/>
+                            Every bouquet is made with love from fresh flowers delivered daily.<br/>
+                            We value beauty, quality, and attention to detail —<br/>
+                            so each bouquet becomes a special gift filled with emotion.<br/>
+                        </p>
+                    </div>
                     <img
-                        // src={LeavesPic}
+                        src={LeavesPic}
+                        alt="Leaves Decoration"
+                        className="Leaves-Decoration-Image"
                     />
                 </div>
 
