@@ -1,0 +1,146 @@
+.BouquetDAmour {
+  width: 100%;
+  height: 850px;
+  position: absolute;
+  object-fit: cover;
+  object-position: center;
+  z-index: 0;
+}
+
+.contact-container {
+  position: relative;
+  min-height: 850px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+/* Rounded Dark Card Overlay */
+.contact-container::after {
+  content: "";
+  position: absolute;
+  inset: 60px;
+  border-radius: 25px;
+  background: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(6px);
+  z-index: 1;
+}
+
+/* Main Content Layout */
+.ContactInfoSection {
+  position: relative;
+  z-index: 2;
+  width: 85%;
+  max-width: 1200px;
+  display: flex;
+  gap: 60px;
+  color: white;
+}
+
+/* LEFT SIDE */
+.LeftSideContactSection {
+  flex: 1;
+}
+
+.LeftSideContactSection h1 {
+  font-size: 48px;
+  margin-bottom: 30px;
+}
+
+.DetailBlock {
+  margin-bottom: 20px;
+}
+
+.DetailBlock h3 {
+  font-size: 18px;
+  margin-bottom: 5px;
+  opacity: 0.8;
+}
+
+.DetailBlock p {
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+/* RIGHT SIDE */
+.RightSideContactSection {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.InputGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ContactInput {
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  outline: none;
+  background: #f2f2f2;
+  font-size: 14px;
+}
+
+textarea.ContactInput {
+  min-height: 120px;
+  resize: none;
+}
+
+.SendMessageButton {
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: black;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.SendMessageButton:hover {
+  background: #f3c6d3;
+  color: black;
+}
+
+/* Social Icons */
+.LogoCircle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.LogoCircle:hover {
+  transform: scale(1.1);
+  background: white;
+  color: black;
+  cursor: pointer;
+}
+
+.LogoContainer {
+  display: flex;
+  gap: 12px;
+  margin-top: 15px;
+}
+
+/* Responsive */
+/* @media (max-width: 768px) {
+  .ContactInfoSection {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .contact-container::after {
+    inset: 20px;
+  }
+} */
