@@ -3,8 +3,15 @@ import { IoPersonOutline } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { IoMdSearch } from "react-icons/io";
 import BouquetLogo from "../Assests/bouquetD_AMOUR_LOGO.png";
+import { useState } from "react";
 
 function NavbarHomepage() {
+  const [isPersonalDetailVisible, setIsPersonalDetailVisible] = useState(false);
+
+  const handlePersonalDetailClick = () => {
+    setIsPersonalDetailVisible(!isPersonalDetailVisible);
+  };
+
   return (
     <nav className="navbar-homepage-container">
       {/* Left Side */}
@@ -25,7 +32,7 @@ function NavbarHomepage() {
 
       {/* Right Side Icons */}
       <div className="navbar-homepage-rightside">
-        <IoPersonOutline className="icon-tag" />
+        <IoPersonOutline onMouseDown={handlePersonalDetailClick} className="icon-tag" />
         <MdOutlineShoppingCart className="icon-tag" />
         <IoMdSearch className="icon-tag" />
       </div>

@@ -14,7 +14,6 @@ import MultiFlower from "../Assests/_ (1).jpeg"
 import MultiFlowerTwo from "../Assests/_ (3).jpeg"
 import Footer from "./Footer"
 
-
 function Homepage(){
 
     const ImageText = [
@@ -70,7 +69,6 @@ function Homepage(){
             description: "Wine and Peasceful White Roses."
         },
     ]
-
 
     return (
         <div className="Homepage-main-div">
@@ -190,7 +188,6 @@ function Homepage(){
                 </div>
                 
                 <Footer/>
-
 
             </div>
 
