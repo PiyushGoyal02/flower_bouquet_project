@@ -1,7 +1,7 @@
 :root {
   --primary-color: #ce7382;
   --secondary-color: #ce7382;
-  --white: #ffffff;
+  --white: #fff7f5;
   --gray: #efefef;
   --gray-2: #757575;
 }
@@ -11,16 +11,6 @@
   padding: 0;
   box-sizing: border-box;
 }
-
-html, body {
-  height: 100%;
-  overflow: hidden;
-}
-
-/* .text {
-  padding: 4rem;
-  margin: 0;
-} */
 
 .auth-container {
   position: relative;
@@ -107,6 +97,16 @@ html, body {
 
 .AlreadyhaveText{
   margin-top: 12px;
+}
+
+/* Hover Effect */
+.input-group:hover {
+  border-color: #ff4d6d;
+}
+
+/* Disabled Option Style */
+.input-group option[disabled] {
+  color: #999;
 }
 
 /* SHOW ACTIVE FORM */

@@ -16,7 +16,7 @@ function NavbarHomepage() {
     <nav className="navbar-homepage-container">
       {/* Left Side */}
       <div className="navbar-homepage-leftside">
-        <a href="/">Home</a>
+        <a href="/homepage">Home</a>
         <a href="/aboutsection">About</a>
         <a href="/contact">Contact</a>
       </div>
