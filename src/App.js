@@ -1,6 +1,5 @@
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
-import ProtectedRoute from "./ProtectedRoute/ProtectedRoute";
 
 import Homepage from "./Componants/Homepage";
 import AboutSection from "./Componants/AboutSection";
@@ -11,9 +10,9 @@ function App() {
   return (
     <Routes>
       <Route path="/" element={<LoginSignup />} />
-      <Route path="/homepage" element={<ProtectedRoute><Homepage /></ProtectedRoute>} />
-      <Route path="/aboutsection" element={<ProtectedRoute><AboutSection /></ProtectedRoute>} />
-      <Route path="/contact" element={<ProtectedRoute><ContactSection /></ProtectedRoute>} />
+      <Route path="/homepage" element={<Homepage />} />
+      <Route path="/aboutsection" element={<AboutSection />} />
+      <Route path="/contact" element={<ContactSection />} />
       {/* <Route path="/login" element={<LoginSignup />} /> */}
     </Routes>
   );

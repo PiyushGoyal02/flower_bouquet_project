@@ -19,12 +19,9 @@ app.use(express.json());
 const dataBase = require("./Config/DataBaseConnection");
 dataBase.DbConnect();
 
-
 // Routes Connection 
 const AuthSection = require("./Routes/AuthRoute");
-const protectedRoutes = require("./Routes/BackendProtectedRoute");
 
-app.use("/api", protectedRoutes);
 app.use("/api/v1/auth", AuthSection);
 
 // Root Route
