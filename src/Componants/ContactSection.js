@@ -4,11 +4,20 @@ import { RiMegaphoneLine } from "react-icons/ri";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoLocationOutline } from "react-icons/io5";
 import Footer from "../Componants/Footer"
+import ConatctInfoImage from "../Assests/ChatGPT Image Mar 7, 2026, 06_08_53 PM (2).png"
 
 function ContactSection() {
   return (
     <div>
       <NavbarHomepage />
+
+     <div className="contact-image-container">
+        <img
+          src={ConatctInfoImage}
+          className="Contact-Info-Image"
+          alt="Contact Information"
+        />
+      </div>
 
       <div className="Contact-Section-Wrapper">
         <div className="Contact-Container">

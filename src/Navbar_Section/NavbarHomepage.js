@@ -32,7 +32,7 @@ function NavbarHomepage({ likeHeartIcon }) {
       </div>
 
       {/* Center Logo */}
-      <div className="navbar-homepage-logo-container">
+      <div onClick={() => navigator('/homepage')} className="navbar-homepage-logo-container">
         <img
           src={BouquetLogo}
           alt="Bouquet D'Amour Logo"
