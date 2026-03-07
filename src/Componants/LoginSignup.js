@@ -12,6 +12,7 @@ const LoginSignup = () => {
   const [Signinformdata, setSigninformdata] =useState({email:"", password:""});
   const [Signupformdata, setSignupformdata] = useState({username:"", email:"", gender:"", password:""});
 
+  // Login and signup Theme Code
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsSignIn(true);

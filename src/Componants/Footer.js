@@ -33,7 +33,7 @@ function Footer(){
                     <div className="footer-contact">
                         <h4>Contact</h4>
                         <p>📍 Fatehabad, Haryana, India</p>
-                        <p>📞 +91 98765 43210</p>
+                        <p>📞 +91 96857 21458</p>
                         <p>✉️ siddhibouquet3542@gmail.com</p>
                     </div>
 

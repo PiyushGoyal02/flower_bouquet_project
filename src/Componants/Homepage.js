@@ -13,8 +13,11 @@ import WhineAndWhite from "../Assests/WhineAndWhiteFlowers.png"
 import MultiFlower from "../Assests/_ (1).jpeg"
 import MultiFlowerTwo from "../Assests/_ (3).jpeg"
 import Footer from "./Footer"
+import { useNavigate } from "react-router-dom";
 
 function Homepage(){
+
+    const Navigator = useNavigate();
 
     const ImageText = [
         {
@@ -82,7 +85,7 @@ function Homepage(){
                 {/* Popular-Bouquets-header */}
                 <div className="Popular-Bouquets-header">
                     <h2 className="Popular-Bouquets-text">Popular Bouquets</h2>
-                    <button className="search-more-button-homepage">
+                    <button onClick={() => Navigator('/products')} className="search-more-button-homepage">
                         Search more
                     </button>
                 </div>
@@ -135,14 +138,13 @@ function Homepage(){
 
                     <img src={RedFlowerBouquet} className="Red-Flower-Bouquet-Image" />
                 </div>
-
             </div>
 
             {/* Four Pictures Div */}
             <div className="Four-Pictures-Div">
                 <div className="Four-Pictures-Header">
                     <h2 className="Special_Bouquet">Special Bouquet's</h2>
-                    <button className="Find-more-button-homepage">
+                    <button onClick={ () => Navigator('/products')} className="Find-more-button-homepage">
                         Find more
                     </button>
                 </div>

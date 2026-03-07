@@ -70,7 +70,7 @@
     max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
-    flex-wrap: wrap;            /* Prevent horizontal overflow */
+    flex-wrap: wrap;           
 }
 
 /* Text Container */
@@ -122,7 +122,7 @@
     max-width: 1200px;
     margin: 0 auto;
     box-sizing: border-box;
-    flex-wrap: wrap;           /* Prevent horizontal overflow */
+    flex-wrap: wrap;         
 }
 
 /* Image Container */

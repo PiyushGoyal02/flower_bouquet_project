@@ -5,6 +5,8 @@ import Homepage from "./Componants/Homepage";
 import AboutSection from "./Componants/AboutSection";
 import ContactSection from "./Componants/ContactSection";
 import LoginSignup from "./Componants/LoginSignup"
+import ProductsSection from "./Componants/ProductsSection";
+// import ProductLikeSection from "./Componants/ProductLikeSection";
 
 function App() {
   return (
@@ -13,7 +15,8 @@ function App() {
       <Route path="/homepage" element={<Homepage />} />
       <Route path="/aboutsection" element={<AboutSection />} />
       <Route path="/contact" element={<ContactSection />} />
-      {/* <Route path="/login" element={<LoginSignup />} /> */}
+      <Route path="/products" element={<ProductsSection/>} />
+      {/* <Route path="/productlikesection" element={<ProductLikeSection />} /> */}
     </Routes>
   );
 }
