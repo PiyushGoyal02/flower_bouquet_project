@@ -21,10 +21,9 @@ function Footer(){
                         <h4>Quick Links</h4>
                         <ul>
                             <li>Home</li>
-                            <li>Popular Bouquets</li>
-                            <li>Luxury Flowers</li>
-                            <li>Anniversary</li>
-                            <li>Birthday</li>
+                            <li>About</li>
+                            <li>Profile</li>
+                            <li>Products</li>
                             <li>Contact Us</li>
                         </ul>
                     </div>

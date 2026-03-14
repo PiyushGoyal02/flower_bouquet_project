@@ -113,7 +113,7 @@ function ContactSection() {
         <div className="map-container">
           <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3430.3680297391043!2d76.76082893799986!3d30.708052521335944!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390fec4f0682d721%3A0xde63ff21f0727c86!2sSector%2045-B%2C%20Chandigarh%2C%20160047!5e0!3m2!1sen!2sin!4v1772876263380!5m2!1sen!2sin"
-            width="1200"
+            width="1350"
             height="480"
             style={{ border: 0 }}
             allowFullScreen=""
