@@ -23,11 +23,11 @@ const ProductCard = React.forwardRef(function ProductCard(
         justifyContent: "flex-start",
         overflow: "hidden",
         borderRadius: "16px",
-        border: "1px solid #f0e0e6",
-        background: "#fff",
+        border: "1px solid var(--card-border)",
+        background: "var(--card-bg)",
         padding: "24px 20px",
         textAlign: "center",
-        boxShadow: "0 2px 8px rgba(192,57,90,0.07)",
+        boxShadow: "var(--card-shadow)",
         width: "100%",
         height: "100%",
         fontFamily: "'Poppins', sans-serif",
@@ -50,28 +50,28 @@ const ProductCard = React.forwardRef(function ProductCard(
 
       {/* Name + tagline */}
       <div style={{ display: "flex", flexGrow: 1, flexDirection: "column", alignItems: "center", gap: "6px", width: "100%" }}>
-        <h3 style={{ margin: 0, fontSize: "0.97rem", fontWeight: 600, color: "#1a0a0a", lineHeight: 1.4 }}>{name}</h3>
-        <p  style={{ margin: 0, fontSize: "0.8rem", color: "#9a6a55", lineHeight: 1.5 }}>{tagline}</p>
+        <h3 style={{ margin: 0, fontSize: "0.97rem", fontWeight: 600, color: "var(--text-heading)", lineHeight: 1.4 }}>{name}</h3>
+        <p  style={{ margin: 0, fontSize: "0.8rem", color: "var(--text-muted)", lineHeight: 1.5 }}>{tagline}</p>
       </div>
 
       {/* Pricing */}
       <div style={{ marginTop: "16px", display: "flex", flexDirection: "column", alignItems: "center", gap: "8px" }}>
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <span style={{ fontSize: "1.4rem", fontWeight: 700, color: "#1a0a0a" }}>{formatPrice(price)}</span>
+          <span style={{ fontSize: "1.4rem", fontWeight: 700, color: "var(--text-price)" }}>{formatPrice(price)}</span>
           {isCouponPrice && (
-            <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "#c0395a" }}>Coupon Price</span>
+            <span style={{ fontSize: "0.72rem", fontWeight: 600, color: "var(--rose)" }}>Coupon Price</span>
           )}
         </div>
 
         <div style={{
           display: "flex", alignItems: "center", gap: "8px",
-          borderRadius: "9999px", background: "#fff5f7",
+          borderRadius: "9999px", background: "var(--tag-gold-bg)",
           padding: "4px 14px", fontSize: "0.75rem",
         }}>
           {originalPrice && (
-            <span style={{ color: "#b0a0a5", textDecoration: "line-through" }}>{formatPrice(originalPrice)}</span>
+            <span style={{ color: "var(--text-price-old)", textDecoration: "line-through" }}>{formatPrice(originalPrice)}</span>
           )}
-          <span style={{ fontWeight: 700, color: "#c07830" }}>{offerText}</span>
+          <span style={{ fontWeight: 700, color: "var(--gold-dark)" }}>{offerText}</span>
         </div>
       </div>
     </motion.div>
@@ -139,15 +139,15 @@ const itemVariants = {
 /* ─── Main export ────────────────────────────────── */
 export default function ProductGrid() {
   return (
-    <div style={{ width: "100%", background: "#fff", padding: "64px 24px 72px", boxSizing: "border-box", fontFamily: "'Poppins', sans-serif" }}>
+    <div style={{ width: "100%", background: "var(--sec-products)", padding: "64px 24px 72px", boxSizing: "border-box", fontFamily: "var(--font-body)" }}>
       <div style={{ maxWidth: "1200px", margin: "0 auto" }}>
 
         {/* Header */}
         <div style={{ textAlign: "center", marginBottom: "48px" }}>
-          <h2 style={{ margin: 0, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700, color: "#c0395a" }}>
+          <h2 style={{ margin: 0, fontSize: "clamp(1.6rem, 3vw, 2.2rem)", fontWeight: 700, color: "var(--text-heading)", fontFamily: "var(--font-heading)" }}>
             Shop Our Collection
           </h2>
-          <p style={{ marginTop: "10px", fontSize: "0.9rem", color: "#9a6a55", maxWidth: "440px", margin: "10px auto 0", lineHeight: 1.65 }}>
+          <p style={{ marginTop: "10px", fontSize: "0.9rem", color: "var(--text-muted)", maxWidth: "440px", margin: "10px auto 0", lineHeight: 1.65 }}>
             Fresh blooms, handcrafted bouquets, and exclusive deals — delivered to your door.
           </p>
         </div>

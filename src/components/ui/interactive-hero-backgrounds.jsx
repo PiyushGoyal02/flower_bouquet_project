@@ -369,10 +369,10 @@ export function InteractiveHeroSection() {
       width:      '100%',
       height:     '100vh',
       overflow:   'hidden',
-      background: '#0f050a',
+      background: 'var(--sec-hero)',
     }}>
       {/* Layer 0 — Smoke / fog WebGL2 background */}
-      <SmokeBackground smokeColor="#c0395a" style={{ zIndex: 0 }} />
+      <SmokeBackground smokeColor="#C2385A" style={{ zIndex: 0 }} />
 
       {/* Layer 1 — Three.js physics spheres (transparent bg shows shader) */}
       <canvas
@@ -438,8 +438,8 @@ export function InteractiveHeroSection() {
             lineHeight:     1,
             letterSpacing: '0.06em',
             margin:         0,
-            fontFamily:    "'Poppins', sans-serif",
-            color:         '#fef0f3',
+            fontFamily:    "var(--font-body)",
+            color:         'var(--text-on-dark)',
             textShadow:    '0 2px 24px rgba(0,0,0,0.55)',
           }}>FRESH</h1>
         </div>
@@ -452,8 +452,8 @@ export function InteractiveHeroSection() {
             lineHeight:     1,
             letterSpacing: '0.06em',
             margin:         0,
-            fontFamily:    "'Poppins', sans-serif",
-            color:         '#fef0f3',
+            fontFamily:    "var(--font-body)",
+            color:         'var(--text-on-dark)',
             display:       'flex',
             alignItems:    'center',
             textShadow:    '0 2px 24px rgba(0,0,0,0.55)',
@@ -462,7 +462,7 @@ export function InteractiveHeroSection() {
             <Flower2 style={{
               width:     'clamp(2.4rem,7vw,7.5rem)',
               height:    'clamp(2.4rem,7vw,7.5rem)',
-              color:     '#c0395a',
+              color:     'var(--rose)',
               flexShrink: 0,
               animation: 'heroIconPulse 2.8s ease-in-out infinite',
             }} />
@@ -490,8 +490,8 @@ export function InteractiveHeroSection() {
             lineHeight:     1,
             letterSpacing: '0.06em',
             margin:         0,
-            fontFamily:    "'Poppins', sans-serif",
-            color:         '#fef0f3',
+            fontFamily:    "var(--font-body)",
+            color:         'var(--text-on-dark)',
             display:       'flex',
             alignItems:    'center',
             textShadow:    '0 2px 24px rgba(0,0,0,0.55)',
@@ -501,7 +501,7 @@ export function InteractiveHeroSection() {
               xmlns="http://www.w3.org/2000/svg"
               style={{ width:'clamp(2.4rem,7vw,7.5rem)', height:'clamp(2.4rem,7vw,7.5rem)', flexShrink:0, animation:'heroIconPulse 2.8s ease-in-out infinite 0.5s' }}
               viewBox="0 0 24 24"
-              fill="#f43f5e"
+              fill="var(--rose)"
             >
               <path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5" />
             </svg>
@@ -527,7 +527,7 @@ export function InteractiveHeroSection() {
             letterSpacing: '0.18em',
             textTransform: 'uppercase',
             color:         'rgba(240,160,184,0.5)',
-            fontFamily:    "'Poppins', sans-serif",
+            fontFamily:    "var(--font-body)",
             whiteSpace:    'nowrap',
           }}>
             Pan India · 450+ Cities
@@ -545,7 +545,7 @@ export function InteractiveHeroSection() {
               fontSize:    'clamp(1rem,2vw,1.5rem)',
               fontWeight:   700,
               fontStyle:   'italic',
-              color:       '#f0a0b8',
+              color:       'var(--rose-light)',
               fontFamily:  "'Poppins', sans-serif",
             }}>sai</span>
           </div>
@@ -563,22 +563,22 @@ export function InteractiveHeroSection() {
                 padding:      '11px 26px',
                 fontSize:     '13px',
                 fontWeight:    700,
-                color:        '#fff',
-                background:   'linear-gradient(135deg,#c0395a,#9a283b)',
+                color:        'var(--white)',
+                background:   'linear-gradient(135deg, var(--rose), var(--rose-hover))',
                 border:       'none',
                 borderRadius: '9999px',
                 cursor:       'pointer',
-                boxShadow:    '0 4px 20px rgba(192,57,90,0.45)',
-                transition:   'transform 200ms,box-shadow 200ms',
-                fontFamily:   "'Poppins', sans-serif",
+                boxShadow:    'var(--btn-primary-shadow)',
+                transition:   'transform 200ms, box-shadow 200ms',
+                fontFamily:   "var(--font-body)",
               }}
               onMouseEnter={e => {
                 e.currentTarget.style.transform = 'translateY(-2px)';
-                e.currentTarget.style.boxShadow = '0 8px 28px rgba(192,57,90,0.6)';
+                e.currentTarget.style.boxShadow = 'var(--btn-primary-shadow-hover)';
               }}
               onMouseLeave={e => {
                 e.currentTarget.style.transform = 'translateY(0)';
-                e.currentTarget.style.boxShadow = '0 4px 20px rgba(192,57,90,0.45)';
+                e.currentTarget.style.boxShadow = 'var(--btn-primary-shadow)';
               }}
             >
               Explore Bouquets <ArrowRight size={14} />
@@ -593,9 +593,9 @@ export function InteractiveHeroSection() {
                 padding:         '11px 26px',
                 fontSize:        '13px',
                 fontWeight:       600,
-                color:           '#f0a0b8',
-                backgroundColor: 'rgba(240,160,184,0.08)',
-                border:          '1px solid rgba(240,160,184,0.28)',
+                color:           'var(--rose-light)',
+                backgroundColor: 'rgba(251,222,232,0.08)',
+                border:          '1px solid rgba(251,222,232,0.28)',
                 borderRadius:    '9999px',
                 cursor:          'pointer',
                 backdropFilter:  'blur(8px)',
@@ -603,13 +603,13 @@ export function InteractiveHeroSection() {
                 fontFamily:      "'Poppins', sans-serif",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.backgroundColor = 'rgba(240,160,184,0.18)';
-                e.currentTarget.style.borderColor     = 'rgba(240,160,184,0.6)';
+                e.currentTarget.style.backgroundColor = 'rgba(251,222,232,0.18)';
+                e.currentTarget.style.borderColor     = 'rgba(251,222,232,0.6)';
                 e.currentTarget.style.transform       = 'translateY(-2px)';
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.backgroundColor = 'rgba(240,160,184,0.08)';
-                e.currentTarget.style.borderColor     = 'rgba(240,160,184,0.28)';
+                e.currentTarget.style.backgroundColor = 'rgba(251,222,232,0.08)';
+                e.currentTarget.style.borderColor     = 'rgba(251,222,232,0.28)';
                 e.currentTarget.style.transform       = 'translateY(0)';
               }}
             >

@@ -10,18 +10,18 @@
 /* ── Login hover ─────────────────────────────────────────────── */
 .mini-navbar-login-btn:hover {
   border-color: rgba(255,255,255,0.5) !important;
-  color: #ffffff !important;
+  color: var(--text-on-dark) !important;
 }
 
 /* ── Signup hover ────────────────────────────────────────────── */
 .mini-navbar-signup-btn:hover {
-  background: linear-gradient(135deg, #e5e7eb, #9ca3af) !important;
-  color: #000 !important;
+  background: linear-gradient(135deg, var(--warm-white), var(--rose-light)) !important;
+  color: var(--rose) !important;
 }
 
 /* ── Mobile link hover ───────────────────────────────────────── */
 .mini-navbar-mobile-link:hover {
-  color: #ffffff !important;
+  color: var(--text-on-dark) !important;
 }
 
 /* ── Signup glow ─────────────────────────────────────────────── */
@@ -29,7 +29,7 @@
   position:         absolute;
   inset:            -10px;
   border-radius:    9999px;
-  background-color: #e5e7eb;
+  background-color: var(--rose-light);
   opacity:          0.3;
   filter:           blur(14px);
   pointer-events:   none;

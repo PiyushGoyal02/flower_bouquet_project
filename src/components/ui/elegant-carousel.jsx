@@ -7,7 +7,8 @@ const slides = [
     subtitle: 'Signature Rose Collection',
     description:
       'Handpicked red roses arranged with love — the timeless gift that speaks a thousand words. Perfect for anniversaries, birthdays, and every heartfelt occasion.',
-    accent: '#C4566A',
+    accent:     'var(--rose)',
+    accentRgb:  '194,56,90',
     imageUrl:
       'https://images.unsplash.com/photo-1487530811176-3780de880c2d?w=900&h=1200&fit=crop&q=80',
   },
@@ -16,7 +17,8 @@ const slides = [
     subtitle: 'Seasonal Fresh Collection',
     description:
       "A vibrant celebration of nature's finest blooms — tulips, lilies, and sunflowers gathered into one breathtaking arrangement. Freshly crafted and delivered daily.",
-    accent: '#7BA87E',
+    accent:     'var(--text-on-dark-green)',
+    accentRgb:  '111,207,151',
     imageUrl:
       'https://images.unsplash.com/photo-1490750967868-88df5691cc3b?w=900&h=1200&fit=crop&q=80',
   },
@@ -109,7 +111,7 @@ export default function ElegantCarousel() {
       {/* Accent glow */}
       <div
         className="carousel-bg-wash"
-        style={{ background: `radial-gradient(ellipse at 70% 50%, ${slide.accent}20 0%, transparent 70%)` }}
+        style={{ background: `radial-gradient(ellipse at 70% 50%, rgba(${slide.accentRgb},0.12) 0%, transparent 70%)` }}
       />
 
       <div className="carousel-inner">
@@ -140,7 +142,7 @@ export default function ElegantCarousel() {
             <img src={slide.imageUrl} alt={slide.title} className="carousel-image" />
             <div
               className="carousel-image-overlay"
-              style={{ background: `linear-gradient(135deg, ${slide.accent}22 0%, transparent 55%)` }}
+              style={{ background: `linear-gradient(135deg, rgba(${slide.accentRgb},0.13) 0%, transparent 55%)` }}
             />
           </div>
           <div className="carousel-frame-corner carousel-frame-corner--tl" style={{ borderColor: slide.accent }} />

@@ -71,10 +71,10 @@ function Homepage(){
 
             {/* Row 1 — scrolls LEFT, rose-pink theme */}
             <Marquee direction="left" duration={28} pauseOnHover={true} fadeAmount={8}
-              style={{ background: "linear-gradient(135deg, #fff0f3 0%, #ffe4ec 100%)", padding: "14px 0" }}
+              style={{ background: "var(--sec-marquee-1)", padding: "14px 0" }}
             >
               {["🌹 Roses", "🌷 Tulips", "🌸 Cherry Blossom", "💐 Handcrafted Bouquets", "🎀 Anniversary Gifts", "🌺 Orchids", "💒 Wedding Arrangements", "🎁 Birthday Bouquets"].map((item) => (
-                <span key={item} style={{ margin: "0 36px", fontSize: "1.15rem", fontWeight: 600, color: "#c0395a", whiteSpace: "nowrap", letterSpacing: "0.03em" }}>
+                <span key={item} style={{ margin: "0 36px", fontSize: "1.15rem", fontWeight: 600, color: "var(--rose)", whiteSpace: "nowrap", letterSpacing: "0.03em" }}>
                   {item}
                 </span>
               ))}
@@ -82,10 +82,10 @@ function Homepage(){
 
             {/* Row 2 — scrolls RIGHT, sage-green theme */}
             <Marquee direction="right" duration={24} pauseOnHover={true} fadeAmount={8}
-              style={{ background: "linear-gradient(135deg, #f0faf3 0%, #d6f5e0 100%)", padding: "14px 0" }}
+              style={{ background: "var(--sec-marquee-2)", padding: "14px 0" }}
             >
               {["🌻 Sunflowers", "🪷 Lilies", "🌿 Fresh Daily", "🚚 Same Day Delivery", "⭐ Premium Quality", "🌼 Seasonal Specials", "💚 Bouquet D'Amour", "🌱 Eco Packaging"].map((item) => (
-                <span key={item} style={{ margin: "0 36px", fontSize: "1.15rem", fontWeight: 600, color: "#2d7a4f", whiteSpace: "nowrap", letterSpacing: "0.03em" }}>
+                <span key={item} style={{ margin: "0 36px", fontSize: "1.15rem", fontWeight: 600, color: "var(--green)", whiteSpace: "nowrap", letterSpacing: "0.03em" }}>
                   {item}
                 </span>
               ))}

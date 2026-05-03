@@ -45,11 +45,11 @@ function Footer() {
     >
       <footer
         style={{
-          borderTop: "1px solid #f0dde2",
-          background: "#ffffff",
+          borderTop: "1px solid var(--border-divider)",
+          background: "var(--bg-surface)",
           marginTop: "60px",
           position: "relative",
-          fontFamily: "'Poppins', sans-serif",
+          fontFamily: "var(--font-body)",
         }}
       >
         {/* ── Main container ── */}
@@ -89,10 +89,10 @@ function Footer() {
               >
                 <span
                   style={{
-                    color: "#1a0a0a",
+                    color: "var(--text-heading)",
                     fontSize: "1.875rem",
                     fontWeight: 700,
-                    fontFamily: "'Poppins', sans-serif",
+                    fontFamily: "var(--font-heading)",
                   }}
                 >
                   {brandName}
@@ -102,7 +102,7 @@ function Footer() {
               {/* Description */}
               <p
                 style={{
-                  color: "#9a7070",
+                  color: "var(--text-muted)",
                   fontWeight: 500,
                   textAlign: "center",
                   maxWidth: "400px",
@@ -132,17 +132,17 @@ function Footer() {
                     rel="noopener noreferrer"
                     aria-label={link.label}
                     style={{
-                      color: "#9a7070",
+                      color: "var(--text-muted)",
                       textDecoration: "none",
                       display: "inline-block",
                       transition: "color 0.2s, transform 0.2s",
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.color = "#c0395a";
+                      e.currentTarget.style.color = "var(--rose)";
                       e.currentTarget.style.transform = "scale(1.18)";
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.color = "#9a7070";
+                      e.currentTarget.style.color = "var(--text-muted)";
                       e.currentTarget.style.transform = "scale(1)";
                     }}
                   >
@@ -168,12 +168,12 @@ function Footer() {
                     key={i}
                     to={link.to}
                     style={{
-                      color: "#9a7070",
+                      color: "var(--text-muted)",
                       textDecoration: "none",
                       transition: "color 0.2s",
                     }}
-                    onMouseEnter={(e) => { e.currentTarget.style.color = "#c0395a"; }}
-                    onMouseLeave={(e) => { e.currentTarget.style.color = "#9a7070"; }}
+                    onMouseEnter={(e) => { e.currentTarget.style.color = "var(--rose)"; }}
+                    onMouseLeave={(e) => { e.currentTarget.style.color = "var(--text-muted)"; }}
                   >
                     {link.label}
                   </Link>
@@ -196,7 +196,7 @@ function Footer() {
             <p
               style={{
                 fontSize: "0.875rem",
-                color: "#9a7070",
+                color: "var(--text-muted)",
                 textAlign: "center",
                 margin: 0,
               }}
@@ -206,7 +206,7 @@ function Footer() {
             <span
               style={{
                 fontSize: "0.875rem",
-                color: "#c0b0b0",
+                color: "var(--ink-hint)",
               }}
             >
               Crafted with ♥ by {creatorName}
@@ -218,7 +218,7 @@ function Footer() {
         <div
           style={{
             backgroundImage:
-              "linear-gradient(to bottom, rgba(26,10,10,0.16), rgba(26,10,10,0.07), transparent)",
+              "linear-gradient(to bottom, rgba(28,8,16,0.16), rgba(28,8,16,0.07), transparent)",
             WebkitBackgroundClip: "text",
             backgroundClip: "text",
             color: "transparent",
@@ -252,24 +252,24 @@ function Footer() {
             WebkitBackdropFilter: "blur(8px)",
             borderRadius: "24px",
             background: "rgba(255,255,255,0.68)",
-            border: "2px solid #f0dde2",
+            border: "2px solid var(--border-divider)",
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
             padding: "12px",
             zIndex: 10,
-            boxShadow: "0 0 24px rgba(192,57,90,0.1)",
+            boxShadow: "0 0 24px rgba(194,56,90,0.1)",
             transition: "border-color 0.3s",
             cursor: "default",
           }}
-          onMouseEnter={(e) => { e.currentTarget.style.borderColor = "#c0395a"; }}
-          onMouseLeave={(e) => { e.currentTarget.style.borderColor = "#f0dde2"; }}
+          onMouseEnter={(e) => { e.currentTarget.style.borderColor = "var(--rose)"; }}
+          onMouseLeave={(e) => { e.currentTarget.style.borderColor = "var(--border-divider)"; }}
         >
           <div
             style={{
               width: "88px",
               height: "88px",
-              background: "linear-gradient(135deg, #1a0a0a, rgba(26,10,10,0.85))",
+              background: "linear-gradient(135deg, var(--ink), rgba(28,8,16,0.85))",
               borderRadius: "18px",
               display: "flex",
               alignItems: "center",
@@ -281,8 +281,8 @@ function Footer() {
               style={{
                 width: "52px",
                 height: "52px",
-                color: "#ffffff",
-                filter: "drop-shadow(0 0 8px rgba(192,57,90,0.6))",
+                color: "var(--white)",
+                filter: "drop-shadow(0 0 8px rgba(194,56,90,0.6))",
               }}
             />
           </div>
@@ -297,7 +297,7 @@ function Footer() {
             transform: "translateX(-50%)",
             height: "1px",
             background:
-              "linear-gradient(to right, transparent, #f0dde2 40%, #f0dde2 60%, transparent)",
+              "linear-gradient(to right, transparent, var(--border-divider) 40%, var(--border-divider) 60%, transparent)",
             width: "100%",
             pointerEvents: "none",
           }}
@@ -307,7 +307,7 @@ function Footer() {
         <div
           style={{
             background:
-              "linear-gradient(to top, #ffffff 45%, rgba(255,255,255,0.85), rgba(255,255,255,0.2))",
+              "linear-gradient(to top, var(--white) 45%, rgba(255,255,255,0.85), rgba(255,255,255,0.2))",
             filter: "blur(16px)",
             position: "absolute",
             bottom: "110px",

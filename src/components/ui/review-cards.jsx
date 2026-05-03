@@ -72,7 +72,7 @@ const TestimonialCard = ({ card }) => (
     boxShadow: "0 2px 12px rgba(0,0,0,0.08)",
     width: "280px",
     flexShrink: 0,
-    background: "#fff",
+    background: "var(--card-bg)",
   }}>
     <div style={{ display: "flex", gap: "10px", alignItems: "center" }}>
       <img
@@ -82,13 +82,13 @@ const TestimonialCard = ({ card }) => (
       />
       <div style={{ display: "flex", flexDirection: "column", gap: "2px" }}>
         <div style={{ display: "flex", alignItems: "center", gap: "5px" }}>
-          <span style={{ fontWeight: 600, fontSize: "0.88rem", color: "#1a1a1a" }}>{card.name}</span>
+          <span style={{ fontWeight: 600, fontSize: "0.88rem", color: "var(--text-heading)" }}>{card.name}</span>
           <VerifyIcon />
         </div>
-        <span style={{ fontSize: "0.73rem", color: "#94a3b8" }}>{card.handle}</span>
+        <span style={{ fontSize: "0.73rem", color: "var(--ink-hint)" }}>{card.handle}</span>
       </div>
     </div>
-    <p style={{ marginTop: "14px", fontSize: "0.83rem", lineHeight: 1.65, color: "#374151" }}>
+    <p style={{ marginTop: "14px", fontSize: "0.83rem", lineHeight: 1.65, color: "var(--text-body)" }}>
       {card.review}
     </p>
   </div>
@@ -100,11 +100,11 @@ const MarqueeRow = ({ data, reverse = false, speed = 28 }) => {
   const animName = reverse ? "rc-scroll-reverse" : "rc-scroll";
   return (
     <div style={{ position: "relative", width: "100%", overflow: "hidden" }}>
-      <div style={{ position: "absolute", left: 0, top: 0, height: "100%", width: "80px", background: "linear-gradient(to right, #fdf8f5, transparent)", zIndex: 2, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", left: 0, top: 0, height: "100%", width: "80px", background: "linear-gradient(to right, var(--sec-reviews), transparent)", zIndex: 2, pointerEvents: "none" }} />
       <div style={{ display: "flex", padding: reverse ? "6px 0 14px" : "14px 0 6px", width: "max-content", animation: `${animName} ${speed}s linear infinite` }}>
         {doubled.map((c, i) => <TestimonialCard key={i} card={c} />)}
       </div>
-      <div style={{ position: "absolute", right: 0, top: 0, height: "100%", width: "80px", background: "linear-gradient(to left, #fdf8f5, transparent)", zIndex: 2, pointerEvents: "none" }} />
+      <div style={{ position: "absolute", right: 0, top: 0, height: "100%", width: "80px", background: "linear-gradient(to left, var(--sec-reviews), transparent)", zIndex: 2, pointerEvents: "none" }} />
     </div>
   );
 };
@@ -119,14 +119,14 @@ export default function ReviewCards() {
         @keyframes rc-scroll-reverse { 0% { transform: translateX(-50%); } 100% { transform: translateX(0);    } }
       `}</style>
 
-      <div style={{ width: "100%", background: "#fdf8f5", padding: "64px 0 72px", fontFamily: "'Poppins', sans-serif" }}>
+      <div style={{ width: "100%", background: "var(--sec-reviews)", padding: "64px 0 72px", fontFamily: "'Poppins', sans-serif" }}>
 
         {/* Heading */}
         <div style={{ display: "flex", flexDirection: "column", alignItems: "center", marginBottom: "40px", padding: "0 24px" }}>
-          <h2 style={{ margin: 0, fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 700, color: "#1a0a0a", textAlign: "center" }}>
+          <h2 style={{ margin: 0, fontSize: "clamp(1.6rem, 3vw, 2rem)", fontWeight: 700, color: "var(--text-heading)", textAlign: "center", fontFamily: "var(--font-heading)" }}>
             What Our Customers Say
           </h2>
-          <p style={{ marginTop: "10px", fontSize: "0.9rem", color: "#9a6a55", textAlign: "center", maxWidth: "460px", lineHeight: 1.65 }}>
+          <p style={{ marginTop: "10px", fontSize: "0.9rem", color: "var(--text-muted)", textAlign: "center", maxWidth: "460px", lineHeight: 1.65 }}>
             Real love stories, shared by the people who matter most — our customers.
           </p>
         </div>

@@ -64,7 +64,7 @@ export default function ExpandCards() {
   return (
     <div style={{
       width: "100%",
-      background: "#1a0a0a",
+      background: "var(--sec-categories)",
       padding: "60px 24px 64px",
       boxSizing: "border-box",
       display: "flex",
@@ -78,8 +78,8 @@ export default function ExpandCards() {
           margin: 0,
           fontSize: "clamp(1.6rem, 3vw, 2.2rem)",
           fontWeight: 700,
-          color: "#fff",
-          fontFamily: "'Poppins', sans-serif",
+          color: "var(--text-on-dark)",
+          fontFamily: "var(--font-heading)",
           letterSpacing: "-0.01em",
         }}>
           Our Flower Collection
@@ -88,8 +88,8 @@ export default function ExpandCards() {
           marginTop: "12px",
           marginBottom: 0,
           fontSize: "0.95rem",
-          color: "rgba(255,255,255,0.55)",
-          fontFamily: "'Poppins', sans-serif",
+          color: "var(--text-on-dark-muted)",
+          fontFamily: "var(--font-body)",
           lineHeight: 1.65,
         }}>
           Hover or tap a card to explore each bloom — every bouquet crafted

@@ -21,7 +21,7 @@ export default function BrandStory() {
   return (
     <section
       style={{
-        background:  "linear-gradient(160deg, #0f0508 0%, #1a060d 50%, #120409 100%)",
+        background:  "var(--sec-brandstory)",
         padding:     "90px 24px 100px",
         overflow:    "hidden",
         position:    "relative",
@@ -52,7 +52,7 @@ export default function BrandStory() {
           fontWeight:    700,
           letterSpacing: "0.22em",
           textTransform: "uppercase",
-          color:         "#c0395a",
+          color:         "var(--rose)",
           marginBottom:  "20px",
         }}
       >
@@ -62,7 +62,7 @@ export default function BrandStory() {
       {/* ── Morphing headline ── */}
       <MorphingText
         texts={MORPH_TEXTS}
-        color="#f0a0b8"
+        color="var(--rose-light)"
         style={{ marginBottom: "56px" }}
       />
 
@@ -84,26 +84,26 @@ export default function BrandStory() {
             style={{
               fontSize:      "clamp(1.4rem, 2.8vw, 2rem)",
               fontWeight:    700,
-              color:         "#fef0f3",
+              color:         "var(--text-on-dark)",
               marginBottom:  "20px",
               lineHeight:    1.25,
               letterSpacing: "-0.01em",
             }}
           >
             India's Most Loved<br />
-            <span style={{ color: "#c0395a" }}>Floral Brand</span>
+            <span style={{ color: "var(--rose)" }}>Floral Brand</span>
           </h3>
 
           <p
             style={{
               fontSize:     "0.97rem",
-              color:        "rgba(255,220,230,0.72)",
+              color:        "var(--text-on-dark-body)",
               lineHeight:   1.85,
               marginBottom: "16px",
             }}
           >
             Bouquet D'Amour, owned and managed by{" "}
-            <span style={{ color: "#f0a0b8", fontWeight: 600 }}>
+            <span style={{ color: "var(--rose-light)", fontWeight: 600 }}>
               Sai Floritech Private Limited
             </span>
             , is a floral e-commerce brand that has been crafting heartfelt
@@ -115,17 +115,17 @@ export default function BrandStory() {
           <p
             style={{
               fontSize:   "0.97rem",
-              color:      "rgba(255,220,230,0.72)",
+              color:      "var(--text-on-dark-body)",
               lineHeight: 1.85,
               marginBottom: "16px",
             }}
           >
             From our workshop in{" "}
-            <span style={{ color: "#f0a0b8", fontWeight: 500 }}>
+            <span style={{ color: "var(--rose-light)", fontWeight: 500 }}>
               Fatehabad, Haryana
             </span>
             , we deliver blooms of joy to over{" "}
-            <span style={{ color: "#f0a0b8", fontWeight: 600 }}>
+            <span style={{ color: "var(--rose-light)", fontWeight: 600 }}>
               450 cities across India
             </span>{" "}
             — with same-day delivery available in major metros. Whether it's
@@ -136,7 +136,7 @@ export default function BrandStory() {
           <p
             style={{
               fontSize:   "0.97rem",
-              color:      "rgba(255,220,230,0.72)",
+              color:      "var(--text-on-dark-body)",
               lineHeight: 1.85,
             }}
           >
@@ -154,7 +154,7 @@ export default function BrandStory() {
               gap:         "8px",
               alignItems:  "center",
               fontSize:    "0.82rem",
-              color:       "rgba(240,160,184,0.6)",
+              color:       "var(--text-on-dark-muted)",
             }}
           >
             <span>✉</span>
@@ -177,7 +177,7 @@ export default function BrandStory() {
               key={i}
               style={{
                 background:   "rgba(255,255,255,0.04)",
-                border:       "1px solid rgba(240,160,184,0.12)",
+                border:       "1px solid var(--rose-shadow)",
                 borderRadius: "18px",
                 padding:      "28px 24px",
                 textAlign:    "center",
@@ -189,7 +189,7 @@ export default function BrandStory() {
                 e.currentTarget.style.background  = "rgba(192,57,90,0.07)";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.borderColor = "rgba(240,160,184,0.12)";
+                e.currentTarget.style.borderColor = "var(--rose-shadow)";
                 e.currentTarget.style.background  = "rgba(255,255,255,0.04)";
               }}
             >
@@ -197,7 +197,7 @@ export default function BrandStory() {
                 style={{
                   fontSize:      "clamp(2rem, 3.5vw, 2.6rem)",
                   fontWeight:    800,
-                  color:         "#c0395a",
+                  color:         "var(--rose)",
                   lineHeight:    1,
                   marginBottom:  "8px",
                   letterSpacing: "-0.02em",
@@ -209,7 +209,7 @@ export default function BrandStory() {
                 style={{
                   fontSize:      "0.72rem",
                   fontWeight:    600,
-                  color:         "rgba(240,160,184,0.65)",
+                  color:         "var(--text-on-dark-muted)",
                   textTransform: "uppercase",
                   letterSpacing: "0.12em",
                 }}

@@ -17,10 +17,10 @@ const AnimatedNavLink = ({ href, children }) => (
       display:       'flex',
       flexDirection: 'column',
     }}>
-      <span style={{ color: '#9ca3af', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
+      <span style={{ color: 'var(--text-on-dark-muted)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
         {children}
       </span>
-      <span style={{ color: '#ffffff', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
+      <span style={{ color: 'var(--text-on-dark)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
         {children}
       </span>
     </span>
@@ -60,12 +60,12 @@ export function Navbar() {
     display:              'flex',
     flexDirection:        'column',
     alignItems:           'center',
-    padding:              '10px 40px',          /* wide horizontal padding */
+    padding:              '10px 40px',
     backdropFilter:       'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
     borderRadius:         isRounded ? '9999px' : '16px',
-    border:               '1px solid rgba(90,90,90,0.75)',
-    backgroundColor:      'rgba(22, 22, 22, 0.58)',
+    border:               '1px solid rgba(255,255,255,0.18)',
+    backgroundColor:      'var(--navbar-bg-dark)',
     transition:           'border-radius 300ms ease',
     boxSizing:            'border-box',
     width:                '650px',
@@ -95,8 +95,8 @@ export function Navbar() {
     width:           '5px',
     height:          '5px',
     borderRadius:    '50%',
-    backgroundColor: '#d1d5db',
-    opacity:         0.85,
+    backgroundColor: 'var(--text-on-dark)',
+    opacity:         0.75,
     ...extra,
   });
 
@@ -118,9 +118,9 @@ export function Navbar() {
   const loginBtnStyle = {
     padding:         '6px 18px',
     fontSize:        '13px',
-    border:          '1px solid rgba(100,100,100,0.8)',
-    backgroundColor: 'rgba(31,31,31,0.62)',
-    color:           '#d1d5db',
+    border:          '1px solid rgba(255,255,255,0.25)',
+    backgroundColor: 'rgba(28,8,16,0.62)',
+    color:           'var(--text-on-dark-muted)',
     borderRadius:    '9999px',
     cursor:          'pointer',
     textDecoration:  'none',
@@ -133,7 +133,7 @@ export function Navbar() {
     padding:        '6px 18px',
     fontSize:       '13px',
     fontWeight:     '600',
-    color:          '#111',
+    color:          'var(--ink)',
     background:     'linear-gradient(135deg, #f3f4f6, #d1d5db)',
     borderRadius:   '9999px',
     border:         'none',
@@ -182,7 +182,7 @@ export function Navbar() {
           onClick={() => setIsOpen(p => !p)}
           aria-label={isOpen ? 'Close' : 'Open'}
           style={{ background:'none', border:'none', cursor:'pointer',
-                   display:'flex', alignItems:'center', color:'#d1d5db',
+                   display:'flex', alignItems:'center', color:'var(--text-on-dark-muted)',
                    padding:0, flexShrink:0 }}
         >
           {isOpen ? (
@@ -214,7 +214,7 @@ export function Navbar() {
                       gap:'14px', width:'100%' }}>
           {navLinks.map(link => (
             <a key={link.href} href={link.href}
-               style={{ color:'#d1d5db', textDecoration:'none', fontSize:'15px',
+               style={{ color:'var(--text-on-dark-muted)', textDecoration:'none', fontSize:'15px',
                         textAlign:'center', display:'block', width:'100%' }}
                className="mini-navbar-mobile-link">
               {link.label}

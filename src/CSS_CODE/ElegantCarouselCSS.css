@@ -7,10 +7,10 @@
   height: 100vh;
   min-height: 580px;
   overflow: hidden;
-  background: #0f0a08;
+  background: var(--sec-categories);
   display: flex;
   flex-direction: column;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
 }
 
 .carousel-bg-wash {
@@ -65,17 +65,18 @@
   font-size: 0.72rem;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.45);
+  color: var(--text-on-dark-hint);
 }
 
 /* Title */
 .carousel-title {
   font-size: clamp(2rem, 4vw, 3.6rem);
   font-weight: 700;
-  color: #fff;
+  color: var(--text-on-dark);
   margin: 0 0 14px;
   line-height: 1.1;
   letter-spacing: -0.02em;
+  font-family: var(--font-heading);
   transition: opacity 400ms ease 60ms, transform 400ms ease 60ms;
 }
 .carousel-title.visible      { opacity: 1; transform: translateY(0); }
@@ -97,7 +98,7 @@
 .carousel-description {
   font-size: 0.93rem;
   line-height: 1.75;
-  color: rgba(255,255,255,0.55);
+  color: var(--text-on-dark-muted);
   margin: 0;
   transition: opacity 400ms ease 180ms, transform 400ms ease 180ms;
 }
@@ -191,12 +192,12 @@
   font-size: 0.68rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  color: rgba(255,255,255,0.3);
+  color: var(--text-on-dark-hint);
   white-space: nowrap;
   transition: color 300ms ease;
 }
 .carousel-progress-item.active .carousel-progress-label {
-  color: rgba(255,255,255,0.85);
+  color: var(--text-on-dark);
 }
 
 /* ── Responsive ── */
