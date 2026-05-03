@@ -1,158 +1,154 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "../CSS_CODE/LoginSignupCSS.css";
 import toast from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
-import NavbarloginSection from "../Navbar_Section/NavbarLoginSection";
+import { Navbar } from "../components/ui/mini-navbar";
+import LoginCarousel from "../components/ui/login-carousel";
 import axios from "axios";
 
 const LoginSignup = () => {
-
   const Navigator = useNavigate();
   const [isSignIn, setIsSignIn] = useState(true);
-  const [Signinformdata, setSigninformdata] =useState({email:"", password:""});
-  const [Signupformdata, setSignupformdata] = useState({username:"", email:"", gender:"", password:""});
+  const [Signinformdata,  setSigninformdata]  = useState({ email: "", password: "" });
+  const [Signupformdata,  setSignupformdata]  = useState({ username: "", email: "", gender: "", password: "" });
 
-  // Login and signup Theme Code
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      setIsSignIn(true);
-    }, 200);
+  const toggle = () => setIsSignIn(!isSignIn);
 
-    return () => clearTimeout(timer);
-  }, []);
-
-  const toggle = () => {
-    setIsSignIn(!isSignIn);
-  };
-
-  // Signin API Handler Section
+  /* ── Sign In ── */
   const SigninSubmitHandler = async (e) => {
     e.preventDefault();
-    try{
-      const SigninResponse = await axios.post(`http://localhost:5000/api/v1/auth/signin`, Signinformdata, {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-      console.log(SigninResponse.data);
-      toast.success("Successfully Signin");
+    try {
+      const res = await axios.post(`http://localhost:5000/api/v1/auth/signin`, Signinformdata, {
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log(res.data);
+      toast.success("Successfully Signed In");
       Navigator("/homepage");
-    }catch(error){
-      console.log("Signin API Error: ", error.message);
-      toast.error("Signin Failed");
+    } catch (err) {
+      console.log("Signin error:", err.message);
+      toast.error("Sign In Failed");
     }
-  }
+  };
 
-  // Singup API Handler Section
+  /* ── Sign Up ── */
   const SignupSubmitHandler = async (e) => {
     e.preventDefault();
-    try{
-      const SignupResponse = await axios.post(`http://localhost:5000/api/v1/auth/signup`, Signupformdata, {
-        headers: {
-          "Content-Type": "application/json"
-        }
-      })
-
-      console.log(SignupResponse.data)
-      toast.success("Signup Successfully")
-      Navigator("/homepage")
-
-    }catch(error){
-      console.log(error.message)
-      toast.error("Signup faild")
+    try {
+      const res = await axios.post(`http://localhost:5000/api/v1/auth/signup`, Signupformdata, {
+        headers: { "Content-Type": "application/json" },
+      });
+      console.log(res.data);
+      toast.success("Account Created Successfully");
+      Navigator("/homepage");
+    } catch (err) {
+      console.log("Signup error:", err.message);
+      toast.error("Sign Up Failed");
     }
-  }
+  };
 
   return (
     <div>
-      <NavbarloginSection />
+      <Navbar />
 
-      <div className={`auth-container ${isSignIn ? "sign-in" : "sign-up"}`}>
-        {/* FORM SECTION */}
-        <div className="auth-row">
-          {/* SIGN UP */}
-          <div className="auth-col align-center flex-col sign-up">
-            <div className="form-wrapper align-center">
-              <form className="form-wrapper align-center" onSubmit={SignupSubmitHandler} >
-                <div className="auth-form sign-up">
-                  <div className="input-group">
-                    <input required name="username" value={Signupformdata.username} onChange={(e) => setSignupformdata({ ...Signupformdata, username: e.target.value })} type="text" placeholder="Username" />
+      <div className="auth-page-wrapper">
+
+        {/* ── Left: Form panel ── */}
+        <div className="auth-form-panel">
+          <div className="auth-form-box">
+
+            {/* Brand */}
+            <div className="auth-brand">
+              <span className="auth-brand-icon">🌸</span>
+              <span className="auth-brand-name">Bouquet D'Amour</span>
+            </div>
+
+            {isSignIn ? (
+              /* ─ Sign In ─ */
+              <>
+                <h2 className="auth-heading">Welcome Back</h2>
+                <p className="auth-subheading">Sign in to your account to continue</p>
+
+                <form onSubmit={SigninSubmitHandler}>
+                  <div className="auth-input-group">
+                    <input
+                      required type="email" placeholder="Email address"
+                      name="email" value={Signinformdata.email}
+                      onChange={(e) => setSigninformdata({ ...Signinformdata, email: e.target.value })}
+                    />
+                  </div>
+                  <div className="auth-input-group">
+                    <input
+                      required type="password" placeholder="Password"
+                      name="password" value={Signinformdata.password}
+                      onChange={(e) => setSigninformdata({ ...Signinformdata, password: e.target.value })}
+                    />
                   </div>
 
-                  <div className="input-group">
-                    <input required name="email" value={Signupformdata.email} onChange={(e) => setSignupformdata({ ...Signupformdata, email: e.target.value })} type="email" placeholder="Email" />
+                  <div className="auth-forgot">
+                    <span>Forgot Password?</span>
                   </div>
 
-                  <div className="input-group">
-                    <input required name="gender" value={Signupformdata.gender} onChange={(e) => setSignupformdata({...Signupformdata, gender: e.target.value})} type="text" placeholder="Gender" />
+                  <button type="submit" className="auth-submit-btn">Sign In</button>
+
+                  <p className="auth-toggle-text">
+                    Don't have an account?{" "}
+                    <span className="auth-toggle-link" onClick={toggle}>Sign up here</span>
+                  </p>
+                </form>
+              </>
+            ) : (
+              /* ─ Sign Up ─ */
+              <>
+                <h2 className="auth-heading">Create Account</h2>
+                <p className="auth-subheading">Join and discover beautiful bouquets</p>
+
+                <form onSubmit={SignupSubmitHandler}>
+                  <div className="auth-input-group">
+                    <input
+                      required type="text" placeholder="Username"
+                      name="username" value={Signupformdata.username}
+                      onChange={(e) => setSignupformdata({ ...Signupformdata, username: e.target.value })}
+                    />
+                  </div>
+                  <div className="auth-input-group">
+                    <input
+                      required type="email" placeholder="Email address"
+                      name="email" value={Signupformdata.email}
+                      onChange={(e) => setSignupformdata({ ...Signupformdata, email: e.target.value })}
+                    />
+                  </div>
+                  <div className="auth-input-group">
+                    <input
+                      required type="text" placeholder="Gender"
+                      name="gender" value={Signupformdata.gender}
+                      onChange={(e) => setSignupformdata({ ...Signupformdata, gender: e.target.value })}
+                    />
+                  </div>
+                  <div className="auth-input-group">
+                    <input
+                      required type="password" placeholder="Password"
+                      name="password" value={Signupformdata.password}
+                      onChange={(e) => setSignupformdata({ ...Signupformdata, password: e.target.value })}
+                    />
                   </div>
 
-                  <div className="input-group">
-                    <input required name="password" value={Signupformdata.password} onChange={(e) => setSignupformdata({...Signupformdata, password:e.target.value})} type="password" placeholder="Password" />
-                  </div>
+                  <button type="submit" className="auth-submit-btn">Sign Up</button>
 
-                  <button type="Submit">Sign Up</button>
-
-                  <p className="AlreadyhaveText">
+                  <p className="auth-toggle-text">
                     Already have an account?{" "}
-                    <b className="pointer" onClick={toggle}>
-                      Sign in here
-                    </b>
+                    <span className="auth-toggle-link" onClick={toggle}>Sign in here</span>
                   </p>
-                </div>
-              </form>
-
-            </div>
-          </div>
-
-          {/* SIGN IN */}
-          <form onSubmit={SigninSubmitHandler} className="auth-col align-center flex-col sign-in">
-            <div className="auth-col align-center flex-col sign-in">
-              <div className="form-wrapper align-center">
-                <div className="auth-form sign-in">
-
-                  <div className="input-group">
-                    <input required name="email" value={Signinformdata.email} onChange={(e) => setSigninformdata({ ...Signinformdata, email: e.target.value })} type="text" placeholder="Email" />
-                  </div>
-
-                  <div className="input-group">
-                    <input required name="password" value={Signinformdata.password} onChange={(e) => setSigninformdata({ ...Signinformdata, password: e.target.value })}   type="password" placeholder="Password" />
-                  </div>
-
-                  <button type="submit">Sign In</button>
-
-                  <p className="AlreadyhaveText">
-                    <b>Forgot Password?</b>
-                  </p>
-
-                  <p className="AlreadyhaveText">
-                    Don’t have an account?{" "}
-                    <b className="pointer" onClick={toggle}>
-                      Sign up here
-                    </b>
-                  </p>
-                </div>
-              </div>
-            </div>
-          </form>
-        </div>
-
-        {/* CONTENT SECTION */}
-        <div className="auth-row content-row">
-          <div className="auth-col align-center flex-col">
-            <div className="text sign-in">
-              <h2>Welcome</h2>
-              <p>Let’s spread love, one flower at a time.</p>
-            </div>
-          </div>
-
-          <div className="auth-col align-center flex-col">
-            <div className="text sign-up">
-              <h2>Join with us</h2>
-              <p>Create beautiful memories with flowers.</p>
-            </div>
+                </form>
+              </>
+            )}
           </div>
         </div>
+
+        {/* ── Right: Carousel panel ── */}
+        <div className="auth-carousel-panel">
+          <LoginCarousel />
+        </div>
+
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
 import "../CSS_CODE/AboutSectionCSS.css"
-import NavbarHomepage from "../Navbar_Section/NavbarHomepage";
+import { HeroSection03 } from "../components/ui/hero-03";
 import Footer from "./Footer";
 import WhatWeDoImage from "../Assests/WhatWeDoGirlImage.png"
 import WeLoveMadeItFlowerImage from "../Assests/WeLoveMadeItFlowerImage.png"
@@ -43,7 +43,7 @@ function AboutSection (){
 
     return (
         <div>
-            <NavbarHomepage/>
+            <HeroSection03 />
 
             <div className="ContainerAboutSection">
                 {/* What we Do Image and Text 1st */}

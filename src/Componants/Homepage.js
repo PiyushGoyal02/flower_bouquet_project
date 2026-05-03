@@ -1,197 +1,184 @@
 import "../CSS_CODE/HomepageCSS.css"
 import SiddhiPic from "../Assests/SiddhiPic.jpeg"
-import NavbarHomepage from "../Navbar_Section/NavbarHomepage";
-import headingpicture from "../Assests/homepageimageheading.png"
-import PopularBouquetsHomepageFirst from "../Assests/PopularBouquetsHomepageFirst.jpeg"
-import PopularBouquetsHomepageSecond from "../Assests/PopularBouquetsHomepageSecond.jpeg"
-import PopularBouquetsHomepageThird from "../Assests/PopularBouquetsHomepageThird.jpeg"
-import RedFlowerBouquet from "../Assests/Screenshot from 2025-11-15 16-08-04.png"
 import LeavesPic from "../Assests/LeavesImage.png"
+import { Navbar } from "../components/ui/mini-navbar";
+import { InteractiveHeroSection } from "../components/ui/interactive-hero-backgrounds";
+import ElegantCarousel from "../components/ui/elegant-carousel";
+import ReviewCards from "../components/ui/review-cards";
+import ProductGrid from "../components/ui/product-card-2";
+import { Marquee } from "../components/ui/marquee";
+import ExpandCards from "../components/ui/expand-cards";
+import RedFlowerBouquet from "../Assests/Screenshot from 2025-11-15 16-08-04.png"
 import RedRiddhiSiddhiFlower from "../Assests/RedRiddhiSiddhiBouquet.png"
 import MeronFlowers from "../Assests/MaronFlower.png"
 import WhineAndWhite from "../Assests/WhineAndWhiteFlowers.png"
 import MultiFlower from "../Assests/_ (1).jpeg"
 import MultiFlowerTwo from "../Assests/_ (3).jpeg"
 import Footer from "./Footer"
+import NewsLetter from "../components/ui/pinky-news-letter";
+import BrandStory from "../components/ui/brand-story";
 import { useNavigate } from "react-router-dom";
 
 function Homepage(){
 
     const Navigator = useNavigate();
 
-    const ImageText = [
-        {
-            imageSrc: {PopularBouquetsHomepageFirst},
-            text: "Roses Bouquet",
-            description: "Beautiful red roses.",
-            price: "1500 Rs."
-        },
-        {
-            imageSrc: {PopularBouquetsHomepageSecond},
-            text: "White and Pink Roses Bouquet",
-            description: "Lovely white and pink roses.",
-            price: "1000 Rs."
-        },
-        {
-            imageSrc: {PopularBouquetsHomepageThird},
-            text: "Multi Colored Bouquet",
-            description: "Vibrant bouquet multi-colored.",
-            price: "1200 Rs."
-        }
-    ]
 
     const ThreeAndThreeImages = [
         {
             imageSrc: {MultiFlower},
             text: "Roses Bouquet",
-            description: "Beautiful red roses."
+            description: "Beautiful handpicked red roses.",
+            price: "₹1,500"
         },
         {
             imageSrc: {RedRiddhiSiddhiFlower},
             text: "Red Roses Bouquet",
-            description: "Loyal And Lovely Red Roses."
+            description: "Loyal and lovely long-stem red roses.",
+            price: "₹1,800"
         },
         {
             imageSrc: {MultiFlowerTwo},
             text: "Multi Colored Bouquet",
-            description: "Vibrant bouquet multi-colored."
+            description: "Vibrant mixed blooms for any occasion.",
+            price: "₹1,200"
         },
         {
             imageSrc: {MeronFlowers},
-            text: "Wine and White Bouquet",
-            description: "Wine and Peasceful White Roses."
+            text: "Maroon Flower Bouquet",
+            description: "Deep maroon blooms, rich and elegant.",
+            price: "₹1,400"
         },
         {
-            imageSrc: {PopularBouquetsHomepageSecond},
-            text: "White and Pink Roses Bouquet",
-            description: "Lovely white and pink roses."
+            imageSrc: {RedFlowerBouquet},
+            text: "Premium Red Bouquet",
+            description: "A premium arrangement of fresh red flowers.",
+            price: "₹2,000"
         },
         {
             imageSrc: {WhineAndWhite},
-            text: "Wine and White Bouquet",
-            description: "Wine and Peasceful White Roses."
+            text: "Wine & White Bouquet",
+            description: "A peaceful blend of wine and white roses.",
+            price: "₹1,600"
         },
     ]
 
     return (
         <div className="Homepage-main-div">
-            <NavbarHomepage/>
+            <Navbar />
             
-            <div>
-                <img src={headingpicture} alt="Homepage Heading" className="homepage-heading-image"/>
-            </div>
+            <InteractiveHeroSection />
 
-            <div className="Popular-Bouquets-section">
-                {/* Popular-Bouquets-header */}
-                <div className="Popular-Bouquets-header">
-                    <h2 className="Popular-Bouquets-text">Popular Bouquets</h2>
-                    <button onClick={() => Navigator('/products')} className="search-more-button-homepage">
-                        Search more
-                    </button>
-                </div>
+            {/* Row 1 — scrolls LEFT, rose-pink theme */}
+            <Marquee direction="left" duration={28} pauseOnHover={true} fadeAmount={8}
+              style={{ background: "linear-gradient(135deg, #fff0f3 0%, #ffe4ec 100%)", padding: "14px 0" }}
+            >
+              {["🌹 Roses", "🌷 Tulips", "🌸 Cherry Blossom", "💐 Handcrafted Bouquets", "🎀 Anniversary Gifts", "🌺 Orchids", "💒 Wedding Arrangements", "🎁 Birthday Bouquets"].map((item) => (
+                <span key={item} style={{ margin: "0 36px", fontSize: "1.15rem", fontWeight: 600, color: "#c0395a", whiteSpace: "nowrap", letterSpacing: "0.03em" }}>
+                  {item}
+                </span>
+              ))}
+            </Marquee>
 
-                {/* Flower's Bouquets Images and With text */}
-                <div className="Popular-Bouquets-Images-with-text">
-                    {ImageText.map((item, index) => (
-                        <div key={index} className="Bouquet-item">
-                            <img 
-                                src={Object.values(item.imageSrc)[0]} 
-                                alt={item.text} 
-                                className="Bouquet-image"
-                            />
+            {/* Row 2 — scrolls RIGHT, sage-green theme */}
+            <Marquee direction="right" duration={24} pauseOnHover={true} fadeAmount={8}
+              style={{ background: "linear-gradient(135deg, #f0faf3 0%, #d6f5e0 100%)", padding: "14px 0" }}
+            >
+              {["🌻 Sunflowers", "🪷 Lilies", "🌿 Fresh Daily", "🚚 Same Day Delivery", "⭐ Premium Quality", "🌼 Seasonal Specials", "💚 Bouquet D'Amour", "🌱 Eco Packaging"].map((item) => (
+                <span key={item} style={{ margin: "0 36px", fontSize: "1.15rem", fontWeight: 600, color: "#2d7a4f", whiteSpace: "nowrap", letterSpacing: "0.03em" }}>
+                  {item}
+                </span>
+              ))}
+            </Marquee>
 
-                            <div className="Bouquet-text-box">
-                                <p className="Bouquet-text">{item.text}</p>
-                                <p className="Bouquet-description">{item.description}</p>
-                                <p className="Bouquet-price">{item.price}</p>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-               
-            </div>
+            <ExpandCards />
 
-            {/* Flower About Section Siddhi Pic */}
+            <ElegantCarousel />
+
+            <ProductGrid />
+
+            <ReviewCards />
+
+            <BrandStory />
+
+            {/* Workshop / About Section — personal touch with real photos */}
             <div className="Flower-About-Section">
 
-                {/* Left Side */}
+                <img src={LeavesPic} alt="" className="Leaves-Decoration-Image" aria-hidden="true" />
+
                 <div className="About-Flower-Workshop-LeftSection">
+                    <span className="About-Label">Our Story</span>
+
                     <div className="About-Flower-Workshop-Text">
                         <h2>About Our Flower Workshop</h2>
                         <p>
-                            Our floristry workshop creates stylish and delicate bouquets for any occasion.<br/>
-                            Every bouquet is made with love from fresh flowers delivered daily.<br/>
-                            We value beauty, quality, and attention to detail —<br/>
-                            so each bouquet becomes a special gift filled with emotion.<br/>
+                            Our floristry workshop creates stylish and delicate bouquets for every occasion.
+                            Every arrangement is made with love from fresh flowers delivered daily.
+                            We believe beauty lies in the details — so each bouquet becomes a heartfelt gift filled with emotion.
                         </p>
                     </div>
-                    <img
-                        src={LeavesPic}
-                        alt="Leaves Decoration"
-                        className="Leaves-Decoration-Image"
-                    />
+
+                    <div className="About-Stats">
+                        <div className="About-Stat">
+                            <span className="About-Stat-Number">500+</span>
+                            <span className="About-Stat-Label">Bouquets Made</span>
+                        </div>
+                        <div className="About-Stat">
+                            <span className="About-Stat-Number">5 Yrs</span>
+                            <span className="About-Stat-Label">Experience</span>
+                        </div>
+                        <div className="About-Stat">
+                            <span className="About-Stat-Number">1 Day</span>
+                            <span className="About-Stat-Label">Delivery</span>
+                        </div>
+                    </div>
                 </div>
 
-                {/* Right Side */}
                 <div className="Right-Images-Wrapper">
-                    <img src={SiddhiPic} className="Siddhi-Image" />
-
-                    <img src={RedFlowerBouquet} className="Red-Flower-Bouquet-Image" />
+                    <img src={SiddhiPic}       alt="Workshop"    className="Siddhi-Image" />
+                    <img src={RedFlowerBouquet} alt="Red Bouquet" className="Red-Flower-Bouquet-Image" />
                 </div>
             </div>
 
-            {/* Four Pictures Div */}
+            {/* Special Bouquets Section */}
             <div className="Four-Pictures-Div">
                 <div className="Four-Pictures-Header">
-                    <h2 className="Special_Bouquet">Special Bouquet's</h2>
-                    <button onClick={ () => Navigator('/products')} className="Find-more-button-homepage">
-                        Find more
+                    <div>
+                        <span className="Special-Bouquet-Label">Handcrafted For You</span>
+                        <h2 className="Special_Bouquet">Special Bouquets</h2>
+                    </div>
+                    <button onClick={() => Navigator('/products')} className="Find-more-button-homepage">
+                        View All
                     </button>
                 </div>
 
-                {/* Three And Three Images */}
                 <div className="popular-bouquets-container">
                     {ThreeAndThreeImages.map((item, index) => (
                         <div key={index} className="bouquet-card-item">
-                            <img 
-                                src={Object.values(item.imageSrc)[0]} 
-                                alt={item.text} 
-                                className="bouquet-card-image"
-                            />
-
+                            <div className="bouquet-card-image-wrapper">
+                                <img
+                                    src={Object.values(item.imageSrc)[0]}
+                                    alt={item.text}
+                                    className="bouquet-card-image"
+                                />
+                            </div>
                             <div className="bouquet-card-content">
                                 <p className="bouquet-card-title">{item.text}</p>
                                 <p className="bouquet-card-description">{item.description}</p>
-                                <p className="bouquet-card-price">{item.price}</p>
+                                <div className="bouquet-card-footer">
+                                    <p className="bouquet-card-price">{item.price}</p>
+                                    <button className="bouquet-card-btn">Order Now</button>
+                                </div>
                             </div>
                         </div>
                     ))}
                 </div>
 
-                {/* Contact Section */}
-                <div className="Contact-Section-Homepage">
-                    <div>
-                        <p>Stay up to date <br/> with our news</p>
-                    </div>
-
-                    <div>
-                        <div className="Contact-Input-Button-Homepage">
-                            <input type="name" placeholder="Enter your name" className="Contact-Input-Homepage"/>
-                            <input type="email" placeholder="Enter your email" className="Contact-Input-Homepage"/>
-                            <button className="Contact-Button-Homepage">Subscribe</button>
-                        </div>
-                        <div>
-                            <p className="Contact-Extra-Text">
-                                Subscribe now and be the first to receive our latest bouquet collections, special offers, and exclusive festival discounts!
-                            </p>
-                        </div>
-                    </div>
-                    
-                </div>
-                
-                <Footer/>
-
             </div>
+
+            <NewsLetter />
+
+            <Footer/>
 
         </div>
     )

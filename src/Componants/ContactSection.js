@@ -1,5 +1,5 @@
 import "../CSS_CODE/ContactSectionCSS.css";
-import NavbarHomepage from "../Navbar_Section/NavbarHomepage";
+import { Navbar } from "../components/ui/mini-navbar";
 import { RiMegaphoneLine } from "react-icons/ri";
 import { HiOutlineMailOpen } from "react-icons/hi";
 import { IoLocationOutline } from "react-icons/io5";
@@ -9,7 +9,7 @@ import ConatctInfoImage from "../Assests/ChatGPT Image Mar 7, 2026, 06_08_53 PM 
 function ContactSection() {
   return (
     <div>
-      <NavbarHomepage />
+      <Navbar />
 
      <div className="contact-image-container">
         <img

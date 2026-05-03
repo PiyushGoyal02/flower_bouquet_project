@@ -1,0 +1,63 @@
+/* ── Slide-up animation (hover only, rest is inline) ────────── */
+.mini-nav-link-inner {
+  transition: transform 350ms ease-out;
+}
+
+.mini-nav-link:hover .mini-nav-link-inner {
+  transform: translateY(-18px); /* exactly one item height */
+}
+
+/* ── Login hover ─────────────────────────────────────────────── */
+.mini-navbar-login-btn:hover {
+  border-color: rgba(255,255,255,0.5) !important;
+  color: #ffffff !important;
+}
+
+/* ── Signup hover ────────────────────────────────────────────── */
+.mini-navbar-signup-btn:hover {
+  background: linear-gradient(135deg, #e5e7eb, #9ca3af) !important;
+  color: #000 !important;
+}
+
+/* ── Mobile link hover ───────────────────────────────────────── */
+.mini-navbar-mobile-link:hover {
+  color: #ffffff !important;
+}
+
+/* ── Signup glow ─────────────────────────────────────────────── */
+.mini-navbar-signup-glow {
+  position:         absolute;
+  inset:            -10px;
+  border-radius:    9999px;
+  background-color: #e5e7eb;
+  opacity:          0.3;
+  filter:           blur(14px);
+  pointer-events:   none;
+  transition:       opacity 300ms, filter 300ms;
+}
+
+div:hover > .mini-navbar-signup-glow {
+  opacity: 0.55;
+  filter:  blur(20px);
+}
+
+/* ── Breakpoint visibility ───────────────────────────────────── */
+.mini-navbar-links,
+.mini-navbar-buttons {
+  display: none !important;
+}
+
+.mini-navbar-hamburger {
+  display: flex !important;
+}
+
+@media (min-width: 640px) {
+  .mini-navbar-links,
+  .mini-navbar-buttons {
+    display: flex !important;
+  }
+
+  .mini-navbar-hamburger {
+    display: none !important;
+  }
+}

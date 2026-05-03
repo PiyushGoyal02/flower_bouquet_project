@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import Footer from "../Componants/Footer";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { useState } from "react";
-import NavbarHomepage from "../Navbar_Section/NavbarHomepage";
+import { Navbar } from "../components/ui/mini-navbar";
 import { useNavigate } from "react-router-dom";
 
 import PopularBouquetsHomepageFirst from "../Assests/PopularBouquetsHomepageFirst.jpeg";
@@ -152,7 +152,7 @@ function ProductsSection() {
 
   return (
     <div>
-      <NavbarHomepage likeHeartIcon={likeHeartIcon} />
+      <Navbar />
 
       <div className="products-container">
         <div className="products-grid">

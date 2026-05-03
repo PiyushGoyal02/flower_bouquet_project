@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../CSS_CODE/SingleProductPage.CSS.css";
-import NavbarHomepage from "../Navbar_Section/NavbarHomepage";
+import { Navbar } from "../components/ui/mini-navbar";
 import Footer from "../Componants/Footer";
 import { BiBookmarkHeart } from "react-icons/bi";
 import { TbTruckDelivery } from "react-icons/tb";
@@ -45,7 +45,7 @@ function SingleProductPage() {
 
   return (
     <div className="product-page">
-      <NavbarHomepage />
+      <Navbar />
 
       <div className="product-container">
         {/* LEFT IMAGE SECTION */}
