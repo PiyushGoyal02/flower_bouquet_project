@@ -1,5 +1,4 @@
 import { Flower2, MessageCircle } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const InstagramIcon = () => (
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
@@ -65,35 +64,6 @@ export function HeroSection03() {
         }}
       />
 
-      {/* ── Header ── */}
-      <header
-        style={{
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          padding: "24px 32px 0",
-          position: "relative",
-          zIndex: 1,
-        }}
-      >
-        <div
-          style={{
-            fontSize: "1.4rem",
-            fontWeight: 700,
-            fontStyle: "italic",
-            fontFamily: "'Poppins', sans-serif",
-            color: "#c0395a",
-          }}
-        >
-          Bouquet D'Amour
-        </div>
-        <nav style={{ display: "flex", gap: "24px", fontSize: "0.875rem", fontFamily: "'Poppins', sans-serif" }}>
-          <Link to="/homepage" style={{ fontWeight: 600, color: "#1a0a0a", textDecoration: "none" }}>Home</Link>
-          <Link to="/aboutsection" style={{ color: "#9ca3af", textDecoration: "none" }}>About</Link>
-          <Link to="/products" style={{ color: "#9ca3af", textDecoration: "none" }}>Products</Link>
-          <Link to="/contact" style={{ color: "#9ca3af", textDecoration: "none" }}>Contact</Link>
-        </nav>
-      </header>
 
       {/* ── Main ── */}
       <main style={{ position: "relative", paddingTop: "80px", paddingBottom: "80px", zIndex: 1 }}>
