@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { Marquee } from "./marquee";
 import { Quote } from "lucide-react";
+import siddhiImg from "../../Assests/team_images/Siddhi.png";
 import piyushImg from "../../Assests/team_images/piyush.png";
 import ishikaImg from "../../Assests/team_images/ishika.png";
 import trishaImg from "../../Assests/team_images/trisha.png";
@@ -9,12 +10,20 @@ import gouravImg from "../../Assests/team_images/gourav.png";
 
 const teamMembers = [
   {
-    name: "Piyush Goyal",
-    role: "Co-Founder & CEO",
+    name: "Siddhi",
+    role: "Founder & Head Florist",
     since: "Since 2019",
-    image: piyushImg,
+    image: siddhiImg,
     accent: "var(--rose)",
     accentBg: "var(--rose-pale)",
+  },
+  {
+    name: "Piyush Goyal",
+    role: "Co-Founder & Tech",
+    since: "Since 2019",
+    image: piyushImg,
+    accent: "var(--gold)",
+    accentBg: "var(--gold-light)",
   },
   {
     name: "Ishika",
@@ -244,8 +253,8 @@ export default function TeamMarquee() {
 
         <div style={{ display: "flex", alignItems: "center", justifyContent: "center", gap: "12px" }}>
           <img
-            src={piyushImg}
-            alt="Piyush Goyal"
+            src={siddhiImg}
+            alt="Siddhi"
             style={{
               width: "40px", height: "40px",
               borderRadius: "50%",
@@ -256,10 +265,10 @@ export default function TeamMarquee() {
           />
           <div style={{ textAlign: "left" }}>
             <p style={{ margin: 0, fontSize: "0.82rem", fontWeight: 700, color: "var(--text-heading)" }}>
-              Piyush Goyal
+              Siddhi
             </p>
             <p style={{ margin: 0, fontSize: "0.72rem", color: "var(--text-muted)" }}>
-              Co-Founder & CEO, Bouquet D'Amour
+              Founder & Head Florist, Bouquet D'Amour
             </p>
           </div>
         </div>
