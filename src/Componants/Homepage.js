@@ -1,13 +1,13 @@
 import "../CSS_CODE/HomepageCSS.css"
 import SiddhiPic from "../Assests/SiddhiPic.jpeg"
 import LeavesPic from "../Assests/LeavesImage.png"
-import { Navbar } from "../components/ui/mini-navbar";
-import { InteractiveHeroSection } from "../components/ui/interactive-hero-backgrounds";
-import ElegantCarousel from "../components/ui/elegant-carousel";
-import ReviewCards from "../components/ui/review-cards";
-import ProductGrid from "../components/ui/product-card-2";
-import { Marquee } from "../components/ui/marquee";
-import ExpandCards from "../components/ui/expand-cards";
+import { Navbar } from "../components/ui/shared/mini-navbar";
+import { InteractiveHeroSection } from "../components/ui/home/interactive-hero-backgrounds";
+import ElegantCarousel from "../components/ui/home/elegant-carousel";
+import ReviewCards from "../components/ui/home/review-cards";
+import ProductGrid from "../components/ui/home/product-card-2";
+import { Marquee } from "../components/ui/shared/marquee";
+import ExpandCards from "../components/ui/home/expand-cards";
 import RedFlowerBouquet from "../Assests/Screenshot from 2025-11-15 16-08-04.png"
 import RedRiddhiSiddhiFlower from "../Assests/RedRiddhiSiddhiBouquet.png"
 import MeronFlowers from "../Assests/MaronFlower.png"
@@ -15,8 +15,8 @@ import WhineAndWhite from "../Assests/WhineAndWhiteFlowers.png"
 import MultiFlower from "../Assests/_ (1).jpeg"
 import MultiFlowerTwo from "../Assests/_ (3).jpeg"
 import Footer from "./Footer"
-import NewsLetter from "../components/ui/pinky-news-letter";
-import BrandStory from "../components/ui/brand-story";
+import NewsLetter from "../components/ui/home/pinky-news-letter";
+import BrandStory from "../components/ui/home/brand-story";
 import { useNavigate } from "react-router-dom";
 
 function Homepage(){

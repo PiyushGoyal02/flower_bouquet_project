@@ -1,14 +1,16 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../../CSS_CODE/MiniNavbarCSS.css';
+import { useLocation } from 'react-router-dom';
+import '../../../CSS_CODE/MiniNavbarCSS.css';
 
 /* ── Slide-up animated link ──────────────────────────────────── */
-const AnimatedNavLink = ({ href, children }) => (
+const AnimatedNavLink = ({ href, children, isActive }) => (
   <a href={href} className="mini-nav-link" style={{
     position:       'relative',
-    display:        'inline-block',
-    overflow:       'hidden',
-    height:         '18px',
-    lineHeight:     '18px',
+    display:        'inline-flex',
+    flexDirection:  'column',
+    alignItems:     'center',
+    gap:            '4px',
+    overflow:       'visible',
     textDecoration: 'none',
     fontSize:       '14px',
     verticalAlign:  'middle',
@@ -16,14 +18,27 @@ const AnimatedNavLink = ({ href, children }) => (
     <span className="mini-nav-link-inner" style={{
       display:       'flex',
       flexDirection: 'column',
+      overflow:      'hidden',
+      height:        '18px',
+      lineHeight:    '18px',
     }}>
-      <span style={{ color: 'var(--text-on-dark-muted)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
+      <span style={{ color: isActive ? 'var(--text-on-dark)' : 'var(--text-on-dark-muted)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
         {children}
       </span>
       <span style={{ color: 'var(--text-on-dark)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
         {children}
       </span>
     </span>
+    {/* Active dot indicator */}
+    <span style={{
+      width:           '4px',
+      height:          '4px',
+      borderRadius:    '50%',
+      backgroundColor: 'var(--rose)',
+      opacity:         isActive ? 1 : 0,
+      transition:      'opacity 0.25s ease',
+      flexShrink:      0,
+    }} />
   </a>
 );
 
@@ -32,6 +47,7 @@ export function Navbar() {
   const [isOpen,    setIsOpen]    = useState(false);
   const [isRounded, setIsRounded] = useState(true);
   const timerRef                  = useRef(null);
+  const { pathname }              = useLocation();
 
   useEffect(() => {
     clearTimeout(timerRef.current);
@@ -161,7 +177,7 @@ export function Navbar() {
         {/* Desktop nav links — CSS hides on mobile */}
         <nav style={desktopNavStyle} className="mini-navbar-links">
           {navLinks.map(link => (
-            <AnimatedNavLink key={link.href} href={link.href}>
+            <AnimatedNavLink key={link.href} href={link.href} isActive={pathname === link.href}>
               {link.label}
             </AnimatedNavLink>
           ))}

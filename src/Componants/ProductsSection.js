@@ -3,7 +3,7 @@ import { FaStar } from "react-icons/fa";
 import Footer from "../Componants/Footer";
 import { IoMdHeartEmpty, IoMdHeart } from "react-icons/io";
 import { useState } from "react";
-import { Navbar } from "../components/ui/mini-navbar";
+import { Navbar } from "../components/ui/shared/mini-navbar";
 import { useNavigate } from "react-router-dom";
 
 import PopularBouquetsHomepageFirst from "../Assests/PopularBouquetsHomepageFirst.jpeg";

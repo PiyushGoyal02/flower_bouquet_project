@@ -1,15 +1,15 @@
 import "../CSS_CODE/AboutSectionCSS.css"
-import { HeroSection03 } from "../components/ui/hero-03";
-import { Navbar } from "../components/ui/mini-navbar";
+import { HeroSection03 } from "../components/ui/about/hero-03";
+import { Navbar } from "../components/ui/shared/mini-navbar";
 import Footer from "./Footer";
-import StatsCards from "../components/ui/stats-cards";
-import WhatWeDoSection from "../components/ui/what-we-do-section";
-import JourneyTimeline from "../components/ui/journey-timeline";
-import TeamMarquee from "../components/ui/team-marquee";
-import HowWeDoIt from "../components/ui/how-we-do-it";
-import TrustBadges from "../components/ui/trust-badges";
-import FAQSection from "../components/ui/faq-section";
-import BrandQuote from "../components/ui/brand-quote";
+import StatsCards from "../components/ui/about/stats-cards";
+import WhatWeDoSection from "../components/ui/about/what-we-do-section";
+import JourneyTimeline from "../components/ui/about/journey-timeline";
+import TeamMarquee from "../components/ui/about/team-marquee";
+import HowWeDoIt from "../components/ui/about/how-we-do-it";
+import TrustBadges from "../components/ui/about/trust-badges";
+import FAQSection from "../components/ui/about/faq-section";
+import BrandQuote from "../components/ui/about/brand-quote";
 
 function AboutSection (){
     return (

@@ -1,12 +1,12 @@
 import { motion } from "framer-motion";
-import { Marquee } from "./marquee";
+import { Marquee } from "../shared/marquee";
 import { Quote } from "lucide-react";
-import siddhiImg from "../../Assests/team_images/Siddhi.png";
-import piyushImg from "../../Assests/team_images/piyush.png";
-import ishikaImg from "../../Assests/team_images/ishika.png";
-import trishaImg from "../../Assests/team_images/trisha.png";
-import saniyaImg from "../../Assests/team_images/saniya.png";
-import gouravImg from "../../Assests/team_images/gourav.png";
+import siddhiImg from "../../../Assests/team_images/Siddhi.png";
+import piyushImg from "../../../Assests/team_images/piyush.png";
+import ishikaImg from "../../../Assests/team_images/ishika.png";
+import trishaImg from "../../../Assests/team_images/trisha.png";
+import saniyaImg from "../../../Assests/team_images/saniya.png";
+import gouravImg from "../../../Assests/team_images/gourav.png";
 
 const teamMembers = [
   {

@@ -2,8 +2,8 @@ import React, { useState } from "react";
 import "../CSS_CODE/LoginSignupCSS.css";
 import toast from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
-import { Navbar } from "../components/ui/mini-navbar";
-import LoginCarousel from "../components/ui/login-carousel";
+import { Navbar } from "../components/ui/shared/mini-navbar";
+import LoginCarousel from "../components/ui/auth/login-carousel";
 import axios from "axios";
 
 const LoginSignup = () => {
@@ -18,7 +18,7 @@ const LoginSignup = () => {
   const SigninSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:5000/api/v1/auth/signin`, Signinformdata, {
+      const res = await axios.post(`http://localhost:8000/api/v1/auth/signin`, Signinformdata, {
         headers: { "Content-Type": "application/json" },
       });
       console.log(res.data);
@@ -34,7 +34,7 @@ const LoginSignup = () => {
   const SignupSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:5000/api/v1/auth/signup`, Signupformdata, {
+      const res = await axios.post(`http://localhost:8000/api/v1/auth/signup`, Signupformdata, {
         headers: { "Content-Type": "application/json" },
       });
       console.log(res.data);

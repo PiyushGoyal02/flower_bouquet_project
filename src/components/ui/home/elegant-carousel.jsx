@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import '../../CSS_CODE/ElegantCarouselCSS.css';
+import '../../../CSS_CODE/ElegantCarouselCSS.css';
 
 const slides = [
   {

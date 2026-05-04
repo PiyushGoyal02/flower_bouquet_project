@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "../CSS_CODE/SingleProductPage.CSS.css";
-import { Navbar } from "../components/ui/mini-navbar";
+import { Navbar } from "../components/ui/shared/mini-navbar";
 import Footer from "../Componants/Footer";
 import { BiBookmarkHeart } from "react-icons/bi";
 import { TbTruckDelivery } from "react-icons/tb";
