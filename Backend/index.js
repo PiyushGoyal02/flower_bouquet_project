@@ -26,11 +26,14 @@ const AuthSection = require("./Routes/AuthRoute");
 const getAllUsersDataRoute = require("./Routes/getAllUsersDataRoute");
 const addProductRoute = require("./Routes/addProductRoute");
 const getAllProductsRoute = require("./Routes/getAllProductsRoute");
+const deleteProductRoute = require("./Routes/deleteProductRoute");
+const updateProductRoute = require("./Routes/updateProductData")
 
-
+app.use("/api/v1/updateProducts", updateProductRoute);
 app.use("/api/v1/products", getAllProductsRoute);
 app.use("/api/v1/users", getAllUsersDataRoute);
 app.use("/api/v1/auth", AuthSection);
+app.use("/api/v1/deleteProduct", deleteProductRoute);
 app.use("/api/v1/products", addProductRoute);
 
 // Root Route

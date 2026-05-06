@@ -107,3 +107,95 @@ exports.addProduct = async (req, res) => {
     });
   }
 };
+
+// Update product details
+exports.updateProduct = async (req, res) => {
+  try{
+
+    const { productId } = req.params;
+    const updateData = req.body;
+
+    if (!productId) {
+      return res.status(400).json({
+        success: false,
+        message: "Product ID is required",
+      });
+    }
+
+    const updatedproduct = await addProductModel.findByIdAndUpdate(productId, updateData, { new: true });
+
+    if(!updatedproduct){
+      return res.status(401).json(
+        {
+          success: false,
+          message: "Product not found",
+        }
+      )
+    }
+
+    res.status(200).json(
+      {
+        success: true,
+        message: "Product updated successfully",
+        updatedproduct: updatedproduct,
+      }
+    )
+
+  }catch(error){
+    console.log("Error updating product:", error);
+    res.status(501).json(
+      {
+        success: false,
+        message: "An error occurred while updating the product",
+        error: error.message,
+        errorName: error.name,
+      }
+    )
+  }
+}
+
+
+// Delete product details
+exports.deleteProduct = async (req, res) => {
+  try{
+
+    const { productId } = req.params;
+
+    if (!productId) {
+      return res.status(400).json({
+        success: false,
+        message: "Product ID is required",
+      });
+    }
+
+    const deletedproduct = await addProductModel.findByIdAndDelete(productId);
+
+    if(!deletedproduct){
+      return res.status(401).json(
+        {
+          success: false,
+          message: "Product not found",
+        }
+      )
+    }
+
+    res.status(200).json(
+      {
+        success: true,
+        message: "Product deleted successfully",
+        deletedproduct: deletedproduct,
+      }
+    )
+
+  }catch(error){
+    console.log("Error deleting product:", error);  
+    res.status(501).json(
+      {
+        success: false,
+        message: "An error occurred while deleting the product",
+        error: error.message,
+        errorName: error.name,
+      }
+    )
+  }
+}
