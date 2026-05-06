@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Phone, Mail, MapPin } from "lucide-react";
+import toast from "react-hot-toast";
+import { storeContactFormApi } from "../../../api/usersApi";
 
 const contactDetails = [
   { Icon: Phone,  label: "Phone",    value: "+91 98765 43210",              href: "tel:+919876543210" },
@@ -10,23 +12,38 @@ const contactDetails = [
 const EMPTY = { firstname: "", lastname: "", email: "", subject: "", message: "" };
 
 export default function ContactFormSection() {
-  const [form, setForm]   = useState(EMPTY);
+
+  const [FormData, setFormData] = useState(EMPTY);
   const [sent, setSent]   = useState(false);
   const [busy, setBusy]   = useState(false);
 
-  const handleChange = (e) =>
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+  const handleChange = (e) => (
+    setFormData((pre) => ({...pre, [e.target.name]: e.target.value}))
+  )
 
-  const handleSubmit = (e) => {
+  const handlerSubmit = async (e) => {
     e.preventDefault();
     setBusy(true);
-    setTimeout(() => {
+
+    const token = localStorage.getItem("flowerToken");
+    if (!token) {
+      toast.error("Please login first to send a message.");
       setBusy(false);
+      return;
+    }
+
+    try {
+      await storeContactFormApi(FormData);
       setSent(true);
-      setForm(EMPTY);
-      setTimeout(() => setSent(false), 4500);
-    }, 1400);
-  };
+      setFormData(EMPTY);
+      toast.success("Message sent successfully!");
+    } catch (error) {
+      console.log("Contact form error:", error);
+      toast.error("Failed to send message. Please try again.");
+    } finally {
+      setBusy(false);
+    }
+  }
 
   return (
     <section className="cfs-section">
@@ -76,7 +93,7 @@ export default function ContactFormSection() {
               <p>We'll get back to you within 2 hours. Thank you for reaching out.</p>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="cfs-form" noValidate>
+            <form onSubmit={handlerSubmit} className="cfs-form" noValidate>
 
               {/* Row: first + last name */}
               <div className="cfs-row">
@@ -85,7 +102,7 @@ export default function ContactFormSection() {
                   <input
                     id="cfs-firstname" name="firstname" type="text"
                     placeholder="First Name" className="cfs-input"
-                    value={form.firstname} onChange={handleChange} required
+                    required value={FormData.firstname} onChange={handleChange}
                   />
                 </div>
                 <div className="cfs-field">
@@ -93,7 +110,7 @@ export default function ContactFormSection() {
                   <input
                     id="cfs-lastname" name="lastname" type="text"
                     placeholder="Last Name" className="cfs-input"
-                    value={form.lastname} onChange={handleChange} required
+                    required value={FormData.lastname} onChange={handleChange}
                   />
                 </div>
               </div>
@@ -103,7 +120,7 @@ export default function ContactFormSection() {
                 <input
                   id="cfs-email" name="email" type="email"
                   placeholder="your@email.com" className="cfs-input"
-                  value={form.email} onChange={handleChange} required
+                  required value={FormData.email} onChange={handleChange}
                 />
               </div>
 
@@ -112,7 +129,7 @@ export default function ContactFormSection() {
                 <input
                   id="cfs-subject" name="subject" type="text"
                   placeholder="Custom bouquet, bulk order…" className="cfs-input"
-                  value={form.subject} onChange={handleChange} required
+                  required value={FormData.subject} onChange={handleChange}
                 />
               </div>
 
@@ -122,7 +139,7 @@ export default function ContactFormSection() {
                   id="cfs-message" name="message"
                   placeholder="Tell us about your order or question…"
                   className="cfs-textarea"
-                  value={form.message} onChange={handleChange} required
+                  required value={FormData.message} onChange={handleChange}
                 />
               </div>
 

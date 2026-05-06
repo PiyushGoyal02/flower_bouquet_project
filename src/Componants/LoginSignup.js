@@ -4,7 +4,7 @@ import toast from 'react-hot-toast';
 import { useNavigate } from "react-router-dom";
 import { Navbar } from "../components/ui/shared/mini-navbar";
 import LoginCarousel from "../components/ui/auth/login-carousel";
-import axios from "axios";
+import { signinApi, signupApi } from "../api/authApi";
 
 const LoginSignup = () => {
   const Navigator = useNavigate();
@@ -18,10 +18,8 @@ const LoginSignup = () => {
   const SigninSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/auth/signin`, Signinformdata, {
-        headers: { "Content-Type": "application/json" },
-      });
-      console.log(res.data);
+      const res = await signinApi(Signinformdata);
+      localStorage.setItem("flowerToken", res.data.token);
       toast.success("Successfully Signed In");
       Navigator("/homepage");
     } catch (err) {
@@ -34,10 +32,8 @@ const LoginSignup = () => {
   const SignupSubmitHandler = async (e) => {
     e.preventDefault();
     try {
-      const res = await axios.post(`http://localhost:8000/api/v1/auth/signup`, Signupformdata, {
-        headers: { "Content-Type": "application/json" },
-      });
-      console.log(res.data);
+      const res = await signupApi(Signupformdata);
+      localStorage.setItem("flowerToken", res.data.token);
       toast.success("Account Created Successfully");
       Navigator("/homepage");
     } catch (err) {

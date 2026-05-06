@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { useLocation } from 'react-router-dom';
 import '../../../CSS_CODE/MiniNavbarCSS.css';
 
-/* ── Slide-up animated link ──────────────────────────────────── */
+/* ── Cube-flip animated link ─────────────────────────────────── */
 const AnimatedNavLink = ({ href, children, isActive }) => (
   <a href={href} className="mini-nav-link" style={{
     position:       'relative',
@@ -14,18 +14,48 @@ const AnimatedNavLink = ({ href, children, isActive }) => (
     textDecoration: 'none',
     fontSize:       '14px',
     verticalAlign:  'middle',
+    perspective:    '400px',
   }}>
     <span className="mini-nav-link-inner" style={{
-      display:       'flex',
-      flexDirection: 'column',
-      overflow:      'hidden',
-      height:        '18px',
-      lineHeight:    '18px',
+      display:          'inline-block',
+      position:         'relative',
+      height:           '18px',
+      lineHeight:       '18px',
+      transformStyle:   'preserve-3d',
+      whiteSpace:       'nowrap',
     }}>
-      <span style={{ color: isActive ? 'var(--text-on-dark)' : 'var(--text-on-dark-muted)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
+      {/* Ghost span — only for width measurement, invisible */}
+      <span style={{ visibility: 'hidden', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap', fontSize: '14px' }}>
         {children}
       </span>
-      <span style={{ color: 'var(--text-on-dark)', lineHeight: '18px', display: 'block', whiteSpace: 'nowrap' }}>
+      {/* Front face */}
+      <span style={{
+        color:                    isActive ? 'var(--text-on-dark)' : 'var(--text-on-dark-muted)',
+        lineHeight:               '18px',
+        display:                  'block',
+        whiteSpace:               'nowrap',
+        position:                 'absolute',
+        top:                      0,
+        left:                     0,
+        transform:                'rotateX(0deg) translateZ(9px)',
+        backfaceVisibility:       'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+      }}>
+        {children}
+      </span>
+      {/* Bottom face — cube rotate on hover */}
+      <span style={{
+        color:                    'var(--text-on-dark)',
+        lineHeight:               '18px',
+        display:                  'block',
+        whiteSpace:               'nowrap',
+        position:                 'absolute',
+        top:                      0,
+        left:                     0,
+        transform:                'rotateX(-90deg) translateZ(9px)',
+        backfaceVisibility:       'hidden',
+        WebkitBackfaceVisibility: 'hidden',
+      }}>
         {children}
       </span>
     </span>

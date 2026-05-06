@@ -1,0 +1,198 @@
+@import '../../styles/tokens.css';
+
+/* ── Admin Layout ────────────────────────────────────── */
+.admin-layout {
+  display: flex;
+  min-height: 100vh;
+  background: var(--bg-dark-mid);
+}
+
+.admin-main {
+  flex: 1;
+  margin-left: 240px;
+  transition: margin-left 0.3s ease;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.admin-main.sidebar-collapsed {
+  margin-left: 64px;
+}
+
+/* ── Top Bar ─────────────────────────────────────────── */
+.admin-topbar {
+  height: 60px;
+  background: var(--ink);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 28px;
+  flex-shrink: 0;
+}
+
+.admin-topbar-title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--text-on-dark);
+}
+
+.admin-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.admin-topbar-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: var(--rose);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+  font-weight: 700;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* ── Page Content ────────────────────────────────────── */
+.admin-content {
+  flex: 1;
+  padding: 28px;
+  overflow-y: auto;
+}
+
+/* ── Stats Grid ──────────────────────────────────────── */
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.admin-stat-card {
+  background: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--r-md);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.admin-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-stat-label {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-on-dark-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.admin-stat-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.admin-stat-icon.rose  { background: rgba(194, 56, 90, 0.18);  color: var(--rose);  }
+.admin-stat-icon.gold  { background: rgba(212, 168, 64, 0.18); color: var(--gold);  }
+.admin-stat-icon.green { background: rgba(41, 104, 67, 0.22);  color: var(--text-on-dark-green); }
+.admin-stat-icon.muted { background: rgba(255,255,255,0.06);   color: var(--text-on-dark-muted); }
+
+.admin-stat-value {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  font-weight: 700;
+  color: var(--text-on-dark);
+  line-height: 1;
+}
+
+.admin-stat-sub {
+  font-size: 12px;
+  color: var(--text-on-dark-muted);
+}
+
+/* ── Section Heading ─────────────────────────────────── */
+.admin-section-heading {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-on-dark);
+  margin-bottom: 14px;
+}
+
+/* ── Recent Orders Table ─────────────────────────────── */
+.admin-table-card {
+  background: var(--ink);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  margin-bottom: 28px;
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.admin-table th {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-on-dark-muted);
+  padding: 12px 20px;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.admin-table td {
+  font-size: 13.5px;
+  color: var(--text-on-dark-body);
+  padding: 13px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.admin-table tr:last-child td {
+  border-bottom: none;
+}
+
+.admin-table tr:hover td {
+  background: rgba(255, 255, 255, 0.025);
+}
+
+.admin-status-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 3px 10px;
+  border-radius: var(--r-full);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.admin-status-badge.delivered  { background: rgba(41,104,67,0.2);   color: var(--text-on-dark-green); }
+.admin-status-badge.pending    { background: rgba(217,119,6,0.2);   color: #FCD34D; }
+.admin-status-badge.processing { background: rgba(194,56,90,0.18);  color: #F3A0B5; }
+
+@media (max-width: 1024px) {
+  .admin-stats-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 768px) {
+  .admin-main { margin-left: 0 !important; }
+  .admin-stats-grid { grid-template-columns: 1fr; }
+  .admin-content { padding: 16px; }
+}
