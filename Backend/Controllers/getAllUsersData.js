@@ -3,7 +3,11 @@ const UserModel = require("../Models/AuthSectionModel");
 // Get All Users Data
 exports.getAllUsersData = async (req, res) => {
   try {
-    const usersData = await UserModel.find({ accountType: 'user' }).select("username email gender")
+    // Exclude admins; include legacy users that may not have accountType set
+    const usersData = await UserModel
+      .find({ accountType: { $ne: "admin" } })
+      .select("-password")
+      .sort({ createdAt: -1 });
 
     return res.status(200).json({
       success: true,

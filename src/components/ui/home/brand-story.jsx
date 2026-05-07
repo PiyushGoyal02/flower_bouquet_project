@@ -160,7 +160,7 @@ export default function BrandStory() {
             <span>✉</span>
             <span>siddhibouquet3542@gmail.com</span>
             <span style={{ margin: "0 6px", opacity: 0.4 }}>·</span>
-            <span>📞 +91 96857 21458</span>
+            <span>📞 +91 98967 87***</span>
           </div>
         </div>
 

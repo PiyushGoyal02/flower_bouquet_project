@@ -1,0 +1,217 @@
+@import '../../styles/tokens.css';
+
+/* ── Cream content surface ───────────────────────────── */
+.au-content {
+  background:      var(--rose-pale);
+  padding-bottom:  60px;
+}
+
+.au-page-title {
+  font-family:     var(--font-heading);
+  font-size:       24px;
+  font-weight:     700;
+  color:           var(--text-heading);
+  margin:          0 0 18px 0;
+}
+
+/* ── Search ──────────────────────────────────────────── */
+.au-search {
+  position:        relative;
+  display:         flex;
+  align-items:     center;
+  margin-bottom:   18px;
+}
+
+.au-search-icon {
+  position:        absolute;
+  top:             50%;
+  left:            18px;
+  transform:       translateY(-50%);
+  width:           18px;
+  height:          18px;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  color:           var(--text-hint);
+  pointer-events:  none;
+  z-index:         2;
+  line-height:     0;
+}
+
+.au-search-input {
+  width:           100%;
+  height:          48px;
+  padding:         0 18px 0 48px;
+  background:      var(--white);
+  border:          1px solid var(--border-light);
+  border-radius:   12px;
+  color:           var(--text-body);
+  font-family:     var(--font-body);
+  font-size:       14px;
+  outline:         none;
+  box-sizing:      border-box;
+  transition:      border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.au-search-input::placeholder {
+  color:           var(--text-hint);
+}
+
+.au-search-input:focus {
+  border-color:    var(--input-border-focus);
+  box-shadow:      var(--input-ring-focus);
+}
+
+/* ── Table card ──────────────────────────────────────── */
+.au-table-card {
+  background:      var(--white);
+  border:          1px solid var(--border-light);
+  border-radius:   14px;
+  overflow:        hidden;
+  box-shadow:      0 1px 3px rgba(28, 8, 16, 0.04);
+}
+
+.au-table {
+  width:           100%;
+  border-collapse: collapse;
+}
+
+.au-table th {
+  font-family:     var(--font-body);
+  font-size:       11px;
+  font-weight:     700;
+  letter-spacing:  0.12em;
+  text-transform:  uppercase;
+  color:           var(--text-heading);
+  padding:         16px 22px;
+  text-align:      left;
+  border-bottom:   1px solid var(--border-light);
+}
+
+.au-th-action {
+  text-align:      left;
+  width:           110px;
+}
+
+.au-table td {
+  font-family:     var(--font-body);
+  font-size:       14px;
+  color:           var(--text-body);
+  padding:         16px 22px;
+  border-bottom:   1px solid var(--border-divider);
+  vertical-align:  middle;
+}
+
+.au-table tbody tr:last-child td {
+  border-bottom:   none;
+}
+
+.au-table tbody tr:hover {
+  background:      var(--rose-pale);
+}
+
+/* ── User cell (avatar + name) ───────────────────────── */
+.au-user-cell {
+  display:         flex;
+  align-items:     center;
+  gap:             14px;
+}
+
+.au-avatar {
+  width:           40px;
+  height:          40px;
+  border-radius:   50%;
+  background:      var(--rose);
+  color:           #fff;
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  font-family:     var(--font-body);
+  font-size:       13px;
+  font-weight:     700;
+  letter-spacing:  0.04em;
+  flex-shrink:     0;
+  overflow:        hidden;
+}
+
+.au-avatar img {
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
+  display:         block;
+}
+
+.au-user-name {
+  font-weight:     500;
+  color:           var(--text-heading);
+  font-size:       14px;
+}
+
+/* ── Email / Orders ──────────────────────────────────── */
+.au-email {
+  color:           var(--text-body);
+}
+
+.au-orders {
+  color:           var(--text-heading);
+  font-weight:     600;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ── Status pill ─────────────────────────────────────── */
+.au-status {
+  display:         inline-flex;
+  align-items:     center;
+  padding:         4px 14px;
+  border-radius:   999px;
+  font-size:       12px;
+  font-weight:     600;
+}
+
+.au-status-active {
+  background:      var(--success-bg);
+  color:           var(--success);
+}
+
+.au-status-blocked {
+  background:      var(--rose-light);
+  color:           var(--rose);
+}
+
+/* ── View button ─────────────────────────────────────── */
+.au-view-btn {
+  height:          36px;
+  padding:         0 22px;
+  background:      var(--white);
+  color:           var(--text-heading);
+  border:          1px solid var(--border-light);
+  border-radius:   10px;
+  font-family:     var(--font-body);
+  font-size:       13.5px;
+  font-weight:     600;
+  cursor:          pointer;
+  transition:      background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+.au-view-btn:hover {
+  background:      var(--rose);
+  border-color:    var(--rose);
+  color:           #fff;
+}
+
+/* ── Empty state ─────────────────────────────────────── */
+.au-empty {
+  text-align:      center;
+  padding:         40px 20px !important;
+  color:           var(--text-hint);
+  font-style:      italic;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 768px) {
+  .au-table th,
+  .au-table td  { padding: 12px 14px; }
+  .au-th-action { width: auto; }
+  .au-avatar    { width: 34px; height: 34px; font-size: 12px; }
+  .au-view-btn  { padding: 0 14px; }
+}

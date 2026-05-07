@@ -6,7 +6,7 @@ const strips = [
     Icon: Phone,
     title: "Call Us Directly",
     desc: "Reach Siddhi and the team for custom orders, bulk arrangements, or same-day urgent deliveries. We pick up.",
-    value: "+91 98765 43210",
+    value: "+91 98967 87***",
     gradientFrom: "#C2385A",
     gradientTo: "#D4A840",
   },

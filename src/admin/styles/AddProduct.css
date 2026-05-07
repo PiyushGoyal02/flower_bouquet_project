@@ -1,0 +1,409 @@
+@import '../../styles/tokens.css';
+
+/* ── Page surface (cream) ────────────────────────────── */
+.apform-content {
+  background:      var(--rose-pale);
+  padding-bottom:  60px;
+}
+
+.apform-page-title {
+  font-family:     var(--font-heading);
+  font-size:       24px;
+  font-weight:     700;
+  color:           var(--text-heading);
+  margin:          0 0 20px 0;
+}
+
+/* ── Card ───────────────────────────────────────────── */
+.apform-card {
+  background:      var(--white);
+  border:          1px solid var(--border-light);
+  border-radius:   14px;
+  padding:         22px 24px 24px;
+  margin-bottom:   18px;
+  box-shadow:      0 1px 3px rgba(28, 8, 16, 0.04);
+}
+
+.apform-card-header {
+  border-bottom:   1px solid var(--border-divider);
+  padding-bottom:  12px;
+  margin-bottom:   18px;
+}
+
+.apform-card-title {
+  font-family:     var(--font-body);
+  font-size:       15px;
+  font-weight:     700;
+  color:           var(--text-heading);
+  margin:          0;
+}
+
+/* ── Grid ───────────────────────────────────────────── */
+.apform-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   18px 18px;
+  align-items:           start;
+}
+
+.apform-col-2 {
+  grid-column:     span 2;
+}
+
+/* ── Field / Label / Input ──────────────────────────── */
+.apform-field {
+  display:         flex;
+  flex-direction:  column;
+  gap:             8px;
+  min-width:       0;
+  width:           100%;
+}
+
+.apform-label {
+  font-family:     var(--font-body);
+  font-size:       13px;
+  font-weight:     600;
+  color:           var(--text-heading);
+  display:         flex;
+  align-items:     center;
+  gap:             8px;
+}
+
+.apform-label-hint {
+  font-size:       11px;
+  font-weight:     400;
+  color:           var(--text-hint);
+  font-style:      italic;
+}
+
+/* All inputs / selects share THIS exact look ─────────── */
+.apform-input {
+  display:         block;
+  width:           100%;
+  height:          44px;
+  padding:         0 14px;
+  background:      var(--white);
+  border:          1px solid var(--border-input);
+  border-radius:   8px;
+  color:           var(--input-text);
+  font-family:     var(--font-body);
+  font-size:       14px;
+  line-height:     1.4;
+  outline:         none;
+  box-sizing:      border-box;
+  transition:      border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.apform-input::placeholder {
+  color:           var(--input-placeholder);
+}
+
+.apform-input:hover:not(:focus) {
+  border-color:    rgba(194, 56, 90, 0.45);
+}
+
+.apform-input:focus {
+  border-color:    var(--input-border-focus);
+  box-shadow:      var(--input-ring-focus);
+}
+
+/* Number inputs — hide spinners */
+.apform-input[type="number"]::-webkit-outer-spin-button,
+.apform-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.apform-input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+/* Textarea — same width as inputs, taller height */
+.apform-textarea {
+  height:          120px;
+  padding:         12px 14px;
+  resize:          vertical;
+  line-height:     1.55;
+}
+
+/* Select wrapper — must be full width to match siblings */
+.apform-select-wrap {
+  position:        relative;
+  width:           100%;
+}
+
+.apform-select {
+  appearance:         none;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  padding-right:      40px;
+  cursor:             pointer;
+}
+
+.apform-select option {
+  background:      var(--white);
+  color:           var(--text-heading);
+}
+
+.apform-select-chevron {
+  position:        absolute;
+  top:             50%;
+  right:           14px;
+  transform:       translateY(-50%);
+  color:           var(--text-hint);
+  pointer-events:  none;
+}
+
+/* ── Chip input (Product highlights) ─────────────────── */
+.apform-chip-input-row {
+  display:         flex;
+  align-items:     center;
+  gap:             8px;
+  width:           100%;
+}
+
+.apform-chip-input-row .apform-input {
+  flex:            1;
+  min-width:       0;
+}
+
+.apform-chip-add-btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  width:           44px;
+  height:          44px;
+  background:      var(--rose);
+  color:           #fff;
+  border:          1px solid var(--rose);
+  border-radius:   8px;
+  cursor:          pointer;
+  flex-shrink:     0;
+  transition:      background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+}
+
+.apform-chip-add-btn:hover {
+  background:      var(--rose-hover);
+  border-color:    var(--rose-hover);
+  box-shadow:      var(--btn-primary-shadow);
+}
+
+.apform-chip-add-btn:active {
+  transform:       translateY(1px);
+}
+
+.apform-chip-list {
+  display:         flex;
+  flex-wrap:       wrap;
+  gap:             8px;
+  list-style:      none;
+  margin:          10px 0 0;
+  padding:         0;
+}
+
+.apform-chip {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             8px;
+  max-width:       100%;
+  padding:         6px 6px 6px 12px;
+  background:      var(--rose-light);
+  color:           var(--rose);
+  border:          1px solid var(--rose-light);
+  border-radius:   999px;
+  font-family:     var(--font-body);
+  font-size:       13px;
+  font-weight:     500;
+  transition:      border-color 0.2s ease, background 0.2s ease;
+}
+
+.apform-chip:hover {
+  border-color:    var(--rose);
+  background:      var(--rose-medium);
+}
+
+.apform-chip-text {
+  white-space:     nowrap;
+  overflow:        hidden;
+  text-overflow:   ellipsis;
+  max-width:       320px;
+}
+
+.apform-chip-remove {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  width:           20px;
+  height:          20px;
+  border-radius:   50%;
+  background:      rgba(194, 56, 90, 0.18);
+  border:          none;
+  color:           var(--rose);
+  cursor:          pointer;
+  flex-shrink:     0;
+  transition:      background 0.15s ease, color 0.15s ease;
+}
+
+.apform-chip-remove:hover {
+  background:      var(--rose);
+  color:           #fff;
+}
+
+@media (max-width: 600px) {
+  .apform-chip-text { max-width: 200px; }
+}
+
+/* ── Dropzone ───────────────────────────────────────── */
+.apform-dropzone {
+  display:         flex;
+  flex-direction:  column;
+  align-items:     center;
+  justify-content: center;
+  gap:             6px;
+  padding:         32px 20px;
+  background:      var(--rose-pale);
+  border:          1.5px dashed var(--border-medium);
+  border-radius:   12px;
+  text-align:      center;
+  cursor:          pointer;
+  transition:      border-color 0.2s ease, background 0.2s ease;
+}
+
+.apform-dropzone:hover,
+.apform-dropzone-active {
+  border-color:    var(--rose);
+  background:      var(--rose-medium);
+}
+
+.apform-dropzone-icon {
+  color:           var(--text-hint);
+  margin-bottom:   4px;
+}
+
+.apform-dropzone:hover .apform-dropzone-icon,
+.apform-dropzone-active .apform-dropzone-icon {
+  color:           var(--rose);
+}
+
+.apform-dropzone-title {
+  font-size:       14.5px;
+  font-weight:     600;
+  color:           var(--text-heading);
+  margin:          0;
+}
+
+.apform-dropzone-sub {
+  font-size:       12.5px;
+  color:           var(--text-muted);
+  margin:          0;
+}
+
+/* Previews */
+.apform-previews {
+  display:               grid;
+  grid-template-columns: repeat(auto-fill, minmax(96px, 1fr));
+  gap:                   10px;
+  margin-top:            12px;
+}
+
+.apform-preview {
+  position:        relative;
+  aspect-ratio:    1 / 1;
+  border-radius:   10px;
+  overflow:        hidden;
+  background:      var(--rose-pale);
+  border:          1px solid var(--border-light);
+}
+
+.apform-preview img {
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
+  display:         block;
+}
+
+.apform-preview-remove {
+  position:        absolute;
+  top:             6px;
+  right:           6px;
+  width:           22px;
+  height:          22px;
+  border-radius:   50%;
+  background:      rgba(28, 8, 16, 0.78);
+  border:          none;
+  color:           #fff;
+  cursor:          pointer;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  transition:      background 0.15s ease;
+}
+
+.apform-preview-remove:hover {
+  background:      var(--rose);
+}
+
+/* ── Action buttons row ─────────────────────────────── */
+.apform-actions {
+  display:         flex;
+  align-items:     center;
+  justify-content: flex-end;
+  gap:             12px;
+  margin-top:      8px;
+}
+
+.apform-btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  height:          44px;
+  padding:         0 28px;
+  border-radius:   10px;
+  font-family:     var(--font-body);
+  font-size:       14px;
+  font-weight:     600;
+  cursor:          pointer;
+  transition:      background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.apform-btn:disabled {
+  opacity:         0.6;
+  cursor:          not-allowed;
+}
+
+.apform-btn-cancel {
+  background:      var(--white);
+  color:           var(--text-heading);
+  border:          1px solid var(--border-light);
+}
+
+.apform-btn-cancel:hover:not(:disabled) {
+  background:      var(--rose-pale);
+  border-color:    var(--rose);
+  color:           var(--rose);
+}
+
+.apform-btn-save {
+  background:      var(--rose);
+  color:           #fff;
+  border:          1px solid var(--rose);
+  box-shadow:      var(--btn-primary-shadow);
+}
+
+.apform-btn-save:hover:not(:disabled) {
+  background:      var(--rose-hover);
+  border-color:    var(--rose-hover);
+  box-shadow:      var(--btn-primary-shadow-hover);
+}
+
+.apform-btn-save:active:not(:disabled) {
+  transform:       translateY(1px);
+}
+
+/* ── Responsive ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .apform-grid           { grid-template-columns: 1fr; gap: 14px; }
+  .apform-col-2          { grid-column: auto; }
+  .apform-card           { padding: 18px; }
+  .apform-actions        { justify-content: stretch; }
+  .apform-btn            { flex: 1; }
+}

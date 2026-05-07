@@ -1,6 +1,7 @@
 .Homepage-main-div {
     background-color: var(--bg-page);
     height: auto;
+    overflow-x: hidden;
 }
 
 .homepage-heading { color: var(--text-heading); }
@@ -9,14 +10,16 @@
 .marquee-strip-rose  { background: linear-gradient(135deg, var(--sec-marquee-1) 0%, var(--rose-light) 100%); }
 .marquee-strip-green { background: linear-gradient(135deg, var(--sec-marquee-2) 0%, #d6f5e0 100%); }
 
-/* ── About / Workshop Section ─────────────────── */
+/* ═══════════════════════════════════════════════════
+   ABOUT / WORKSHOP SECTION
+   ═══════════════════════════════════════════════════ */
 .Flower-About-Section {
     position: relative;
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 80px;
-    padding: 100px 80px;
+    gap: clamp(24px, 5vw, 80px);
+    padding: clamp(48px, 8vw, 100px) clamp(16px, 5vw, 80px);
     background: var(--sec-workshop);
     overflow: hidden;
 }
@@ -25,7 +28,7 @@
     position: absolute;
     bottom: -20px;
     left: -30px;
-    width: 280px;
+    width: clamp(140px, 22vw, 280px);
     opacity: 0.88;
     pointer-events: none;
     user-select: none;
@@ -36,9 +39,11 @@
 .About-Flower-Workshop-LeftSection {
     flex: 1;
     max-width: 500px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     gap: 0;
+    z-index: 1;
 }
 
 .About-Label {
@@ -54,7 +59,7 @@
 .About-Flower-Workshop-Text { margin-bottom: 32px; }
 
 .About-Flower-Workshop-LeftSection h2 {
-    font-size: clamp(1.7rem, 2.8vw, 2.3rem);
+    font-size: clamp(1.5rem, 4vw, 2.3rem);
     font-weight: 700;
     color: var(--text-heading);
     margin: 0 0 18px 0;
@@ -63,7 +68,7 @@
 }
 
 .About-Flower-Workshop-LeftSection p {
-    font-size: 0.97rem;
+    font-size: clamp(0.9rem, 1.4vw, 0.97rem);
     color: var(--text-muted);
     line-height: 1.85;
     margin: 0;
@@ -71,7 +76,8 @@
 
 .About-Stats {
     display: flex;
-    gap: 36px;
+    flex-wrap: wrap;
+    gap: clamp(20px, 3vw, 36px);
     padding-top: 28px;
     border-top: 1px solid var(--border-divider);
 }
@@ -79,7 +85,7 @@
 .About-Stat { display: flex; flex-direction: column; gap: 4px; }
 
 .About-Stat-Number {
-    font-size: 1.6rem;
+    font-size: clamp(1.3rem, 2.5vw, 1.6rem);
     font-weight: 700;
     color: var(--rose);
     line-height: 1;
@@ -92,17 +98,20 @@
     letter-spacing: 0.1em;
 }
 
+/* Right images — fluid responsive sizing */
 .Right-Images-Wrapper {
     position: relative;
-    width: 420px;
-    height: 500px;
+    width: clamp(280px, 30vw, 420px);
+    height: clamp(340px, 36vw, 500px);
     flex-shrink: 0;
+    z-index: 1;
 }
 
 .Siddhi-Image {
     position: absolute;
     top: 0; left: 0;
-    width: 320px; height: 430px;
+    width: 76%;
+    height: 86%;
     border-radius: 18px;
     object-fit: cover;
     object-position: center top;
@@ -112,24 +121,69 @@
 .Red-Flower-Bouquet-Image {
     position: absolute;
     bottom: 0; right: 0;
-    width: 210px; height: 255px;
+    width: 50%;
+    height: 51%;
     border-radius: 14px;
     object-fit: cover;
     box-shadow: var(--shadow-md);
     border: 5px solid var(--white);
 }
 
-/* ── Special Bouquets Section ─────────────────── */
+/* Workshop responsive — stack on tablet/mobile */
+@media (max-width: 900px) {
+    .Flower-About-Section {
+        flex-direction: column;
+        text-align: center;
+        gap: 32px;
+    }
+
+    .About-Flower-Workshop-LeftSection {
+        align-items: center;
+        max-width: 600px;
+    }
+
+    .About-Stats {
+        justify-content: center;
+    }
+
+    .Right-Images-Wrapper {
+        width: min(420px, 90vw);
+        height: auto;
+        aspect-ratio: 420 / 500;
+        max-height: 480px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Right-Images-Wrapper {
+        width: 100%;
+        max-width: 320px;
+    }
+
+    .About-Stats {
+        gap: 18px;
+    }
+}
+
+
+/* ═══════════════════════════════════════════════════
+   SPECIAL BOUQUETS SECTION
+   ═══════════════════════════════════════════════════ */
 .Four-Pictures-Div {
     background-color: var(--sec-special);
-    padding-bottom: 72px;
+    padding-bottom: clamp(40px, 6vw, 72px);
+    overflow-x: hidden;
 }
 
 .Four-Pictures-Header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 72px 80px 32px;
+    flex-wrap: wrap;
+    gap: 16px;
+    padding: clamp(40px, 6vw, 72px) clamp(16px, 5vw, 80px) clamp(24px, 3vw, 32px);
+    max-width: 1280px;
+    margin: 0 auto;
 }
 
 .Special-Bouquet-Label {
@@ -143,7 +197,7 @@
 }
 
 .Special_Bouquet {
-    font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+    font-size: clamp(1.4rem, 4vw, 2.2rem);
     font-weight: 700;
     color: var(--text-heading);
     margin: 0;
@@ -168,15 +222,39 @@
     color: var(--white);
 }
 
+/* Card grid — responsive */
 .popular-bouquets-container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 80px;
+    padding: 0 clamp(16px, 5vw, 80px);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 28px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(16px, 2.5vw, 28px);
     box-sizing: border-box;
+}
+
+@media (max-width: 1024px) {
+    .popular-bouquets-container {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (max-width: 600px) {
+    .popular-bouquets-container {
+        grid-template-columns: 1fr;
+        max-width: 480px;
+    }
+
+    .Four-Pictures-Header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .Find-more-button-homepage {
+        align-self: stretch;
+        text-align: center;
+    }
 }
 
 .bouquet-card-item {
@@ -184,6 +262,7 @@
     border-radius: 18px;
     cursor: pointer;
     width: 100%;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -196,7 +275,18 @@
     box-shadow: 0 14px 40px var(--rose-shadow);
 }
 
-.bouquet-card-image-wrapper { width: 100%; height: 260px; overflow: hidden; }
+.bouquet-card-image-wrapper {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
+}
+
+@media (min-width: 768px) {
+    .bouquet-card-image-wrapper {
+        aspect-ratio: auto;
+        height: 260px;
+    }
+}
 
 .bouquet-card-image {
     width: 100%; height: 100%;
@@ -223,6 +313,8 @@
 .bouquet-card-footer {
     display: flex; align-items: center;
     justify-content: space-between; margin-top: 14px;
+    flex-wrap: wrap;
+    gap: 10px;
 }
 
 .bouquet-card-price {

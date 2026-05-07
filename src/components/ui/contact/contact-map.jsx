@@ -51,7 +51,7 @@ export default function ContactMap() {
         </div>
         <div class="cmap-popup-row">
           <span class="cmap-popup-label">Phone</span>
-          <span class="cmap-popup-value">+91 98765 43210</span>
+          <span class="cmap-popup-value">+91 98967 87***</span>
         </div>
       </div>
     `);
@@ -111,7 +111,7 @@ export default function ContactMap() {
             </span>
             <div>
               <p className="cmap-info-label">Phone</p>
-              <a href="tel:+919876543210" className="cmap-info-link">+91 98765 43210</a>
+              <a href="tel:+919896787" className="cmap-info-link">+91 98967 87***</a>
             </div>
           </div>
 

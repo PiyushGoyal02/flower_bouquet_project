@@ -5,7 +5,7 @@ const faqs = [
   {
     id: 1,
     q: "How do I place a custom bouquet order?",
-    a: "Simply fill out the contact form above or call us directly at +91 98765 43210. Tell us the occasion, your preferred flowers, and budget — Siddhi will craft the perfect bouquet for you within 24 hours.",
+    a: "Simply fill out the contact form above or call us directly at +91 98967 87***. Tell us the occasion, your preferred flowers, and budget — Siddhi will craft the perfect bouquet for you within 24 hours.",
   },
   {
     id: 2,
@@ -20,7 +20,7 @@ const faqs = [
   {
     id: 4,
     q: "How quickly do you respond to messages?",
-    a: "We respond to all emails and form submissions within 2 hours during business hours. For urgent orders, calling us directly at +91 98765 43210 is the fastest way to reach us.",
+    a: "We respond to all emails and form submissions within 2 hours during business hours. For urgent orders, calling us directly at +91 98967 87*** is the fastest way to reach us.",
   },
 ];
 

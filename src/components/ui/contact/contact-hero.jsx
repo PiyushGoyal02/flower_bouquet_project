@@ -87,7 +87,7 @@ export default function ContactHero() {
             <Mail size={16} strokeWidth={2} />
             Send a Message
           </a>
-          <a href="tel:+919876543210" className="ch-btn-outline">
+          <a href="tel:+919896787" className="ch-btn-outline">
             <Phone size={16} strokeWidth={2} />
             Call Us
           </a>

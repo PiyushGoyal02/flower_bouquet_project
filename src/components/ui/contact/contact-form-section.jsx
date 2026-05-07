@@ -4,7 +4,7 @@ import toast from "react-hot-toast";
 import { storeContactFormApi } from "../../../api/usersApi";
 
 const contactDetails = [
-  { Icon: Phone,  label: "Phone",    value: "+91 98765 43210",              href: "tel:+919876543210" },
+  { Icon: Phone,  label: "Phone",    value: "+91 98967 87***",              href: "tel:+919896787" },
   { Icon: Mail,   label: "Email",    value: "support@bouquetdamour.com",    href: "mailto:support@bouquetdamour.com" },
   { Icon: MapPin, label: "Location", value: "Chandigarh, India",            href: null },
 ];

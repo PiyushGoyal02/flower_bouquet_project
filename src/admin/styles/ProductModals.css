@@ -1,0 +1,402 @@
+@import '../../styles/tokens.css';
+
+/* ── Backdrop & dialog shell ─────────────────────────── */
+.pmodal-backdrop {
+  position:        fixed;
+  inset:           0;
+  background:      var(--bg-modal-overlay);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  z-index:         1000;
+  padding:         20px;
+  animation:       pmodal-fade 0.18s ease;
+}
+
+@keyframes pmodal-fade {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.pmodal {
+  background:      var(--white);
+  border:          1px solid var(--border-light);
+  border-radius:   16px;
+  width:           100%;
+  max-height:      90vh;
+  overflow:        hidden;
+  display:         flex;
+  flex-direction:  column;
+  box-shadow:      0 20px 60px rgba(28, 8, 16, 0.30);
+  animation:       pmodal-pop 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes pmodal-pop {
+  from { opacity: 0; transform: translateY(12px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1); }
+}
+
+.pmodal-edit   { max-width: 720px; }
+.pmodal-delete { max-width: 460px; }
+
+/* ── Header ──────────────────────────────────────────── */
+.pmodal-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  padding:         18px 22px;
+  border-bottom:   1px solid var(--border-divider);
+  flex-shrink:     0;
+}
+
+.pmodal-title {
+  font-family:     var(--font-heading);
+  font-size:       18px;
+  font-weight:     700;
+  color:           var(--text-heading);
+  margin:          0;
+}
+
+.pmodal-close {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  width:           32px;
+  height:          32px;
+  border-radius:   8px;
+  background:      transparent;
+  border:          none;
+  color:           var(--text-muted);
+  cursor:          pointer;
+  transition:      background 0.15s ease, color 0.15s ease;
+}
+
+.pmodal-close:hover {
+  background:      var(--rose-pale);
+  color:           var(--rose);
+}
+
+/* ── Body ────────────────────────────────────────────── */
+.pmodal-body {
+  padding:         22px;
+  overflow-y:      auto;
+  flex:            1;
+}
+
+/* Edit: preview row at top */
+.pmodal-edit-preview {
+  display:         flex;
+  align-items:     center;
+  gap:             14px;
+  padding:         12px 14px;
+  background:      var(--rose-pale);
+  border:          1px solid var(--border-light);
+  border-radius:   12px;
+  margin-bottom:   18px;
+}
+
+.pmodal-edit-image {
+  width:           50px;
+  height:          50px;
+  border-radius:   10px;
+  overflow:        hidden;
+  flex-shrink:     0;
+  background:      var(--rose-light);
+}
+
+.pmodal-edit-image img {
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
+  display:         block;
+}
+
+.pmodal-edit-eyebrow {
+  font-size:       11px;
+  font-weight:     600;
+  text-transform:  uppercase;
+  letter-spacing:  0.1em;
+  color:           var(--rose);
+  margin:          0 0 2px 0;
+}
+
+.pmodal-edit-name {
+  font-family:     var(--font-heading);
+  font-size:       16px;
+  font-weight:     600;
+  color:           var(--text-heading);
+  margin:          0;
+}
+
+/* Edit grid */
+.pmodal-grid {
+  display:               grid;
+  grid-template-columns: 1fr 1fr;
+  gap:                   16px;
+  align-items:           start;
+}
+
+.pmodal-col-2 {
+  grid-column:     span 2;
+}
+
+.pmodal-field {
+  display:         flex;
+  flex-direction:  column;
+  gap:             7px;
+  min-width:       0;
+  width:           100%;
+}
+
+.pmodal-label {
+  font-size:       13px;
+  font-weight:     600;
+  color:           var(--text-heading);
+}
+
+.pmodal-input {
+  display:         block;
+  width:           100%;
+  height:          42px;
+  padding:         0 14px;
+  background:      var(--white);
+  border:          1px solid var(--border-input);
+  border-radius:   8px;
+  color:           var(--input-text);
+  font-family:     var(--font-body);
+  font-size:       14px;
+  outline:         none;
+  box-sizing:      border-box;
+  transition:      border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pmodal-input::placeholder {
+  color:           var(--input-placeholder);
+}
+
+.pmodal-input:hover:not(:focus) {
+  border-color:    rgba(194, 56, 90, 0.45);
+}
+
+.pmodal-input:focus {
+  border-color:    var(--rose);
+  box-shadow:      var(--input-ring-focus);
+}
+
+.pmodal-input[type="number"]::-webkit-outer-spin-button,
+.pmodal-input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.pmodal-input[type="number"] { -moz-appearance: textfield; }
+
+.pmodal-textarea {
+  height:          110px;
+  padding:         12px 14px;
+  resize:          vertical;
+  line-height:     1.5;
+}
+
+.pmodal-select-wrap {
+  position:        relative;
+  width:           100%;
+}
+
+.pmodal-select {
+  appearance:         none;
+  -webkit-appearance: none;
+  -moz-appearance:    none;
+  padding-right:      40px;
+  cursor:             pointer;
+}
+
+.pmodal-select-chevron {
+  position:        absolute;
+  top:             50%;
+  right:           14px;
+  transform:       translateY(-50%);
+  color:           var(--text-hint);
+  pointer-events:  none;
+}
+
+/* ── Delete-specific body ────────────────────────────── */
+.pmodal-delete-body {
+  text-align:      center;
+  padding:         28px 24px 8px;
+}
+
+.pmodal-warn-icon {
+  width:           56px;
+  height:          56px;
+  border-radius:   50%;
+  background:      var(--error-bg);
+  color:           var(--error);
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  margin-bottom:   14px;
+}
+
+.pmodal-warn-heading {
+  font-family:     var(--font-heading);
+  font-size:       20px;
+  font-weight:     700;
+  color:           var(--text-heading);
+  margin:          0 0 6px 0;
+}
+
+.pmodal-warn-para {
+  font-size:       13.5px;
+  color:           var(--text-muted);
+  line-height:     1.5;
+  margin:          0 0 18px 0;
+}
+
+/* Product card preview inside delete modal */
+.pmodal-product-card {
+  display:         flex;
+  align-items:     center;
+  gap:             14px;
+  text-align:      left;
+  padding:         12px 14px;
+  background:      var(--rose-pale);
+  border:          1px solid var(--border-light);
+  border-radius:   12px;
+}
+
+.pmodal-product-image {
+  width:           56px;
+  height:          56px;
+  border-radius:   10px;
+  overflow:        hidden;
+  flex-shrink:     0;
+  background:      var(--rose-light);
+}
+
+.pmodal-product-image img {
+  width:           100%;
+  height:          100%;
+  object-fit:      cover;
+  display:         block;
+}
+
+.pmodal-product-info {
+  min-width:       0;
+  flex:            1;
+}
+
+.pmodal-product-name {
+  font-family:     var(--font-body);
+  font-size:       14.5px;
+  font-weight:     600;
+  color:           var(--text-heading);
+  margin:          0 0 4px 0;
+  white-space:     nowrap;
+  overflow:        hidden;
+  text-overflow:   ellipsis;
+}
+
+.pmodal-product-meta {
+  display:         flex;
+  align-items:     center;
+  gap:             6px;
+  font-size:       12.5px;
+  color:           var(--text-muted);
+  flex-wrap:       wrap;
+}
+
+.pmodal-product-price {
+  color:           var(--rose);
+  font-weight:     600;
+}
+
+.pmodal-product-dot {
+  color:           var(--text-hint);
+}
+
+/* ── Footer (buttons) ────────────────────────────────── */
+.pmodal-footer {
+  display:         flex;
+  align-items:     center;
+  justify-content: flex-end;
+  gap:             10px;
+  padding:         16px 22px;
+  border-top:      1px solid var(--border-divider);
+  flex-shrink:     0;
+}
+
+.pmodal-btn {
+  display:         inline-flex;
+  align-items:     center;
+  justify-content: center;
+  height:          42px;
+  padding:         0 22px;
+  border-radius:   10px;
+  font-family:     var(--font-body);
+  font-size:       13.5px;
+  font-weight:     600;
+  cursor:          pointer;
+  border:          1px solid transparent;
+  transition:      background 0.2s ease, border-color 0.2s ease, transform 0.15s ease, box-shadow 0.2s ease;
+}
+
+.pmodal-btn:disabled {
+  opacity:         0.6;
+  cursor:          not-allowed;
+}
+
+.pmodal-btn-ghost {
+  background:      var(--white);
+  color:           var(--text-heading);
+  border-color:    var(--border-light);
+}
+
+.pmodal-btn-ghost:hover:not(:disabled) {
+  background:      var(--rose-pale);
+  border-color:    var(--rose);
+  color:           var(--rose);
+}
+
+.pmodal-btn-primary {
+  background:      var(--rose);
+  color:           #fff;
+  border-color:    var(--rose);
+  box-shadow:      var(--btn-primary-shadow);
+}
+
+.pmodal-btn-primary:hover:not(:disabled) {
+  background:      var(--rose-hover);
+  border-color:    var(--rose-hover);
+  box-shadow:      var(--btn-primary-shadow-hover);
+}
+
+.pmodal-btn-primary:active:not(:disabled) {
+  transform:       translateY(1px);
+}
+
+.pmodal-btn-danger {
+  background:      var(--error);
+  color:           #fff;
+  border-color:    var(--error);
+  box-shadow:      0 4px 14px rgba(192, 57, 43, 0.32);
+}
+
+.pmodal-btn-danger:hover:not(:disabled) {
+  background:      #9C2D24;
+  border-color:    #9C2D24;
+  box-shadow:      0 6px 20px rgba(192, 57, 43, 0.40);
+}
+
+.pmodal-btn-danger:active:not(:disabled) {
+  transform:       translateY(1px);
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 640px) {
+  .pmodal-grid    { grid-template-columns: 1fr; }
+  .pmodal-col-2   { grid-column: auto; }
+  .pmodal-footer  { padding: 14px 16px; }
+  .pmodal-btn     { flex: 1; }
+}

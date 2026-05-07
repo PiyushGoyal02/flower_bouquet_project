@@ -1,23 +1,63 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+# ─── Dependencies (frontend + backend) ──────────────────────
+node_modules/
+**/node_modules/
+.pnp
 .pnp.js
 
-# testing
-/coverage
+# ─── Build / production output ──────────────────────────────
+build/
+dist/
+.next/
+.vercel/
+.cache/
+out/
 
-# production
-/build
+# ─── Coverage / testing ─────────────────────────────────────
+coverage/
+.nyc_output/
 
-# misc
-.DS_Store
+# ─── Environment / secrets ──────────────────────────────────
+.env
 .env.local
+.env.development
 .env.development.local
+.env.test
 .env.test.local
+.env.production
 .env.production.local
+**/.env
+**/.env.*
 
+# ─── Log files ──────────────────────────────────────────────
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+*.log
+
+# ─── OS / editor cruft ──────────────────────────────────────
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+*.swp
+*.swo
+*~
+
+# ─── IDE / Editor folders ───────────────────────────────────
+.idea/
+.vscode/
+*.sublime-project
+*.sublime-workspace
+
+# ─── Temp / lock files ──────────────────────────────────────
+*.pid
+*.seed
+*.pid.lock
+
+# ─── Local dev artifacts ────────────────────────────────────
+.parcel-cache/
+*.tsbuildinfo

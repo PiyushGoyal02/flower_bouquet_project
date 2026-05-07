@@ -2,18 +2,18 @@ const addProductModel = require("../Models/adminSideModel");
 const cloudinary = require("../Config/ClaudinaryConfig");
 
 // Helper: ek file buffer ko cloudinary par upload karta hai
-// const uploadBufferToCloudinary = (buffer) => {
-//   return new Promise((resolve, reject) => {
-//     const stream = cloudinary.uploader.upload_stream(
-//       { folder: "flower_bouquet_website", resource_type: "image" },
-//       (error, result) => {
-//         if (error) return reject(error);
-//         resolve(result.secure_url);
-//       }
-//     );
-//     stream.end(buffer);
-//   });
-// };
+const uploadBufferToCloudinary = (buffer) => {
+  return new Promise((resolve, reject) => {
+    const stream = cloudinary.uploader.upload_stream(
+      { folder: "flower_bouquet_website", resource_type: "image" },
+      (error, result) => {
+        if (error) return reject(error);
+        resolve(result.secure_url);
+      }
+    );
+    stream.end(buffer);
+  });
+};
 
 exports.addProduct = async (req, res) => {
   try {

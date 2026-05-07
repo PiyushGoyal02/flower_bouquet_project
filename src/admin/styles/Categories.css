@@ -1,0 +1,154 @@
+@import '../../styles/tokens.css';
+
+/* ── Cream content surface ───────────────────────────── */
+.cat-content {
+  background:      var(--rose-pale);
+  padding-bottom:  60px;
+}
+
+/* ── Header row ──────────────────────────────────────── */
+.cat-header {
+  display:         flex;
+  align-items:     center;
+  justify-content: space-between;
+  gap:             16px;
+  flex-wrap:       wrap;
+  margin-bottom:   22px;
+}
+
+.cat-page-title {
+  font-family:     var(--font-heading);
+  font-size:       24px;
+  font-weight:     700;
+  color:           var(--text-heading);
+  margin:          0;
+}
+
+.cat-add-btn {
+  display:         inline-flex;
+  align-items:     center;
+  gap:             8px;
+  height:          42px;
+  padding:         0 18px;
+  background:      var(--btn-primary-bg);
+  color:           #fff;
+  border:          none;
+  border-radius:   10px;
+  font-family:     var(--font-body);
+  font-size:       13.5px;
+  font-weight:     600;
+  cursor:          pointer;
+  box-shadow:      var(--btn-primary-shadow);
+  transition:      background 0.2s ease, box-shadow 0.2s ease, transform 0.15s ease;
+  white-space:     nowrap;
+}
+
+.cat-add-btn:hover {
+  background:      var(--btn-primary-hover);
+  box-shadow:      var(--btn-primary-shadow-hover);
+}
+
+.cat-add-btn:active {
+  background:      var(--btn-primary-active);
+  transform:       translateY(1px);
+}
+
+/* ── Grid ────────────────────────────────────────────── */
+.cat-grid {
+  display:               grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap:                   22px;
+}
+
+/* ── Card ────────────────────────────────────────────── */
+.cat-card {
+  display:         flex;
+  flex-direction:  column;
+  background:      transparent;
+}
+
+.cat-banner {
+  height:          110px;
+  border-radius:   14px;
+  display:         flex;
+  align-items:     center;
+  justify-content: center;
+  position:        relative;
+  overflow:        hidden;
+  box-shadow:      0 1px 3px rgba(28, 8, 16, 0.05);
+}
+
+.cat-emoji {
+  font-size:       38px;
+  filter:          drop-shadow(0 2px 4px rgba(28, 8, 16, 0.08));
+}
+
+.cat-meta {
+  margin-top:      14px;
+  display:         flex;
+  flex-direction:  column;
+  gap:             4px;
+}
+
+.cat-name {
+  font-family:     var(--font-heading);
+  font-size:       18px;
+  font-weight:     600;
+  color:           var(--text-heading);
+  margin:          0;
+}
+
+.cat-count {
+  font-family:     var(--font-body);
+  font-size:       13.5px;
+  color:           var(--text-muted);
+  margin:          0;
+}
+
+.cat-actions {
+  display:         flex;
+  align-items:     center;
+  gap:             18px;
+  margin-top:      12px;
+}
+
+.cat-btn-edit,
+.cat-btn-delete {
+  background:      transparent;
+  border:          none;
+  padding:         2px 0;
+  font-family:     var(--font-body);
+  font-size:       13.5px;
+  font-weight:     500;
+  cursor:          pointer;
+  transition:      color 0.2s ease;
+}
+
+.cat-btn-edit       { color: var(--text-body); }
+.cat-btn-edit:hover { color: var(--rose); }
+
+.cat-btn-delete       { color: var(--text-body); }
+.cat-btn-delete:hover { color: var(--error); }
+
+/* ── Loading / Empty state ───────────────────────────── */
+.cat-loading {
+  text-align:      center;
+  padding:         50px 20px;
+  background:      var(--white);
+  border:          1px dashed var(--border-light);
+  border-radius:   14px;
+  color:           var(--text-muted);
+  font-style:      italic;
+  margin:          0;
+}
+
+/* ── Responsive ──────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .cat-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 600px) {
+  .cat-grid    { grid-template-columns: 1fr; gap: 18px; }
+  .cat-banner  { height: 100px; }
+  .cat-emoji   { font-size: 34px; }
+}

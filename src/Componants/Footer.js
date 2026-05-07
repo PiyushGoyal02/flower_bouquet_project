@@ -60,9 +60,9 @@ function Footer() {
             flexDirection: "column",
             justifyContent: "space-between",
             margin: "0 auto",
-            minHeight: "38rem",
+            minHeight: "clamp(28rem, 60vh, 38rem)",
             position: "relative",
-            padding: "40px 16px",
+            padding: "clamp(28px, 5vw, 40px) clamp(16px, 4vw, 24px)",
             boxSizing: "border-box",
           }}
         >
@@ -185,12 +185,14 @@ function Footer() {
           {/* ── Copyright row ── */}
           <div
             style={{
-              marginTop: "80px",
+              marginTop: "clamp(48px, 8vw, 80px)",
               display: "flex",
               flexDirection: "column",
               gap: "8px",
               alignItems: "center",
               justifyContent: "center",
+              padding: "0 16px",
+              textAlign: "center",
             }}
           >
             <p
@@ -226,15 +228,16 @@ function Footer() {
             position: "absolute",
             left: "50%",
             transform: "translateX(-50%)",
-            bottom: "130px",
+            bottom: "clamp(110px, 14vw, 130px)",
             fontWeight: 800,
             letterSpacing: "-0.04em",
             pointerEvents: "none",
             userSelect: "none",
             textAlign: "center",
             whiteSpace: "nowrap",
-            fontSize: "clamp(2.6rem, 11vw, 9rem)",
-            maxWidth: "95vw",
+            fontSize: "clamp(2rem, 11vw, 9rem)",
+            maxWidth: "100vw",
+            overflow: "hidden",
             fontFamily: "'Poppins', sans-serif",
           }}
         >
@@ -245,7 +248,7 @@ function Footer() {
         <div
           style={{
             position: "absolute",
-            bottom: "90px",
+            bottom: "clamp(70px, 10vw, 90px)",
             left: "50%",
             transform: "translateX(-50%)",
             backdropFilter: "blur(8px)",
@@ -267,8 +270,8 @@ function Footer() {
         >
           <div
             style={{
-              width: "88px",
-              height: "88px",
+              width: "clamp(66px, 9vw, 88px)",
+              height: "clamp(66px, 9vw, 88px)",
               background: "linear-gradient(135deg, var(--ink), rgba(28,8,16,0.85))",
               borderRadius: "18px",
               display: "flex",
@@ -279,8 +282,8 @@ function Footer() {
           >
             <Flower2
               style={{
-                width: "52px",
-                height: "52px",
+                width: "clamp(40px, 5.4vw, 52px)",
+                height: "clamp(40px, 5.4vw, 52px)",
                 color: "var(--white)",
                 filter: "drop-shadow(0 0 8px rgba(194,56,90,0.6))",
               }}
@@ -292,7 +295,7 @@ function Footer() {
         <div
           style={{
             position: "absolute",
-            bottom: "130px",
+            bottom: "clamp(110px, 14vw, 130px)",
             left: "50%",
             transform: "translateX(-50%)",
             height: "1px",
@@ -310,7 +313,7 @@ function Footer() {
               "linear-gradient(to top, var(--white) 45%, rgba(255,255,255,0.85), rgba(255,255,255,0.2))",
             filter: "blur(16px)",
             position: "absolute",
-            bottom: "110px",
+            bottom: "clamp(90px, 12vw, 110px)",
             width: "100%",
             height: "88px",
             pointerEvents: "none",

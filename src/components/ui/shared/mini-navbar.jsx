@@ -106,7 +106,7 @@ export function Navbar() {
     display:              'flex',
     flexDirection:        'column',
     alignItems:           'center',
-    padding:              '10px 40px',
+    padding:              'clamp(8px, 1.6vw, 10px) clamp(18px, 4vw, 40px)',
     backdropFilter:       'blur(12px)',
     WebkitBackdropFilter: 'blur(12px)',
     borderRadius:         isRounded ? '9999px' : '16px',
@@ -114,7 +114,8 @@ export function Navbar() {
     backgroundColor:      'var(--navbar-bg-dark)',
     transition:           'border-radius 300ms ease',
     boxSizing:            'border-box',
-    width:                '650px',
+    width:                'min(650px, calc(100vw - 16px))',
+    maxWidth:             '95vw',
   };
 
   const innerRowStyle = {
@@ -122,7 +123,7 @@ export function Navbar() {
     alignItems:     'center',
     justifyContent: 'space-between',
     width:          '100%',
-    gap:            '32px',
+    gap:            'clamp(16px, 3vw, 32px)',
   };
 
   const logoStyle = {

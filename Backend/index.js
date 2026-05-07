@@ -28,7 +28,9 @@ const addProductRoute = require("./Routes/addProductRoute");
 const getAllProductsRoute = require("./Routes/getAllProductsRoute");
 const deleteProductRoute = require("./Routes/deleteProductRoute");
 const updateProductRoute = require("./Routes/updateProductData")
+const getAllCategoriesRoute = require("./Routes/getAllCategoriesRoute")
 
+app.use("/api/v1/categories", getAllCategoriesRoute);
 app.use("/api/v1/updateProducts", updateProductRoute);
 app.use("/api/v1/products", getAllProductsRoute);
 app.use("/api/v1/users", getAllUsersDataRoute);
